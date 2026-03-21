@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Ssgmce.css">
+    <title>Ssgmce.clone</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ── NEWS CARDS ── */
+        .card-3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px 24px;
+            color: white;
+        }
+
+        .card-3-date {
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: rgb(180, 200, 255);
+        }
+
+        .card-3-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: white;
+            margin: 6px 0 4px;
+            line-height: 1.4;
+        }
+
+        .card-3-tag {
+            display: inline-block;
+            font-family: 'Poppins', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            background-color: rgba(255, 255, 255, 0.18);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-top: 8px;
+        }
+
+        .card-3 {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card-3:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        }
+
+        /* ── QUICK ACTIONS ── */
+        .quick-action-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-left: 60px;
+            margin-top: 24px;
+            margin-bottom: 20px;
+            width: 320px;
+        }
+
+        .qa-btn {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+            background-color: rgb(44, 44, 130);
+            border: none;
+            border-radius: 5px;
+            padding: 14px 20px;
+            cursor: pointer;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15);
+            transition: background-color 0.25s ease, transform 0.2s ease;
+            text-decoration: none;
+        }
+
+        .qa-btn:hover {
+            background-color: rgb(63, 102, 210);
+            transform: translateX(5px);
+        }
+
+        .qa-btn:active {
+            transform: scale(0.97);
+        }
+
+        .qa-icon {
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        /* ── NEWS + QA LAYOUT ── */
+        .news-qa-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 0;
+            margin-bottom: 40px;
+        }
+
+        .news-column {
+            flex: 1;
+        }
+
+        .qa-column {
+            flex-shrink: 0;
+            margin-top: 24px;
+            margin-right: 60px;
+        }
+
+        /* ── STATS BAND ── */
+        .stats-band {
+            background: radial-gradient(circle at top left, red, blue);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 40px 60px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .stat-item .stat-num {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1;
+            display: block;
+        }
+
+        .stat-item .stat-label {
+            font-size: 14px;
+            font-weight: 400;
+            opacity: 0.85;
+            margin-top: 6px;
+            display: block;
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            background-color: rgb(18, 18, 60);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            padding: 50px 80px 24px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 36px;
+        }
+
+        .footer-col h4 {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgb(180, 200, 255);
+            margin-bottom: 16px;
+        }
+
+        .footer-col p {
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1.75;
+            opacity: 0.7;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.65);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .footer-contact-item .fc-icon {
+            font-size: 16px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .footer-contact-item p {
+            font-size: 13px;
+            opacity: 0.7;
+            line-height: 1.5;
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            opacity: 0.5;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .footer-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 12px;
+            font-family: "DM Serif Text", serif;
+        }
+
+        .footer-accreditation {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .accred-badge {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <img src="images/WhatsApp Image 2026-03-21 at 10.44.27 PM.jpeg">
+        <span class="ssgmce">Shri Sant Gajanan Maharaj Engineering Collage</span>
+        <div class="nav-container">
+            <nav class="nav-keys">
+                <a href="#">Academics</a>
+                <a href="#">Admission</a>
+                <a href="#">Research & Development</a>
+                <a href="#">Facilities</a>
+                <a href="#">Placement</a>
+                <a href="#">IQAC</a>
+                <a href="#">NIRF Ranking</a>
+                <a href="#">Documents</a>
+                <a href="#">Activities</a>
+                <a href="#">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1 class="dis">Shaping the Future of Engineering </h1>
+        <img class="clg-image" src="images/WhatsApp Image 2026-03-21 at 10.44.07 PM.jpeg">
+        <h9 class="dis-2">Excellence in Engineering Education, <br> Research & Innovation at <br> Shri Sant Gajanan
+            Maharaj Collage of Engineering</h9>
+        <button class="btn">Apply Now &#8594</button>
+        <button class="btn-2">Learn More</button>
+        <div class="year"><span class="year-big">43 &#43;</span><br> Years of Excellence</div>
+    </div>
+
+    <div class="discription">
+        Why Choose SSGMCE ?
+    </div>
+
+    <p class="h1">We provide comprehensive engineering educating with a focus on practical learning,<br>
+    </p>
+    <p class="h2">research,and industry readiness </p>
+
+    <div class="container">
+        <div class="card">
+            <span class="icon">👨‍🏫</span>
+            <h3 class="h3">World-Class Faculty</h3>
+            <p class="pass">Learn from experienced professors and industry experts</p>
+        </div>
+
+        <div class="card">
+            <span class="icon">🏢</span>
+            <h3 class="h3">Modern Infrastructure</h3>
+            <p class="pass">State-of-the-art labs, libraries, and research facilities</p>
+        </div>
+
+        <div class="card">
+            <span class="icon">🤝</span>
+            <h3 class="h3">Industry Partnerships</h3>
+            <p class="pass">Strong connections with leading companies for internships and placements</p>
+        </div>
+
+        <div class="card">
+            <span class="icon">🔬</span>
+            <h3 class="h3">Research Excellence</h3>
+            <p class="pass">Cutting-edge research projects and innovation programs</p>
+        </div>
+    </div>
+
+    <div class="discription-2">
+        Our Department
+    </div>
+
+    <p class="h1">Explore our diverse range of engineering programs designed to meet industry
+    </p>
+    <p class="h2">demands </p>
+
+    <div class="container-2">
+        <div class="card-2">
+            <h1 class="branch">Computer Science and Engineering</h1>
+            <p class="branch-info">Cutting-edge curriculum in software Devolopment
+                ,AI,and data science
+            </p>
+        </div>
+
+        <div class="card-2">
+            <h1 class="branch">Information and Technology</h1>
+            <p class="branch-info">Networks, databases, cybersecurity, cloud,and
+                information systems</p>
+        </div>
+
+        <div class="card-2">
+            <h1 class="branch">Electronics & Telecommunication Engineering</h1>
+            <p class="branch-info">Communication systems, signal processing, VLSI
+                embedded systems
+            </p>
+        </div>
+
+        <div class="card-2">
+            <h1 class="branch">Electrical and Power Engineering</h1>
+            <p class="branch-info">Power systems, electronics,and renewable energy technologies</p>
+        </div>
+    </div>
+
+    <div class="card-2i">
+        <h1 class="branch">Mechanical Engineering</h1>
+        <p class="branch-info">Mechanics , Thermodynamcics, Materials
+            Fluid mechanics, Robotics
+        </p>
+    </div>
+
+    <div class="discription-3">
+        Latest News & Updates
+        <span class="Q-A">Quick Action</span>
+    </div>
+
+    <!-- ── NEWS + QUICK ACTIONS ── -->
+    <div class="news-qa-wrapper">
+
+        <!-- News Column -->
+        <div class="news-column">
+            <div class="container-3">
+
+                <div class="card-3">
+                    <span class="card-3-date">March 15, 2026</span>
+                    <p class="card-3-title">SSGMCE ranks among Top 50 Engineering Colleges in Maharashtra — NIRF Rankings 2026 announced</p>
+                    <span class="card-3-tag">🏆 Achievement</span>
+                </div>
+
+                <div class="card-3">
+                    <span class="card-3-date">March 10, 2026</span>
+                    <p class="card-3-title">Admissions Open for B.E. 2026–27 — Apply before April 30 through MHT-CET counselling portal</p>
+                    <span class="card-3-tag">📋 Admissions</span>
+                </div>
+
+                <div class="card-3">
+                    <span class="card-3-date">February 28, 2026</span>
+                    <p class="card-3-title">Annual Tech Fest "Technotsav 2026" scheduled for April 12–13 — Register now for competitions and workshops</p>
+                    <span class="card-3-tag">🎉 Event</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Quick Actions Column -->
+        <div class="qa-column">
+            <div class="quick-action-grid">
+                <a href="#" class="qa-btn">
+                    <span class="qa-icon">📋</span> Apply for Admission
+                </a>
+                <a href="#" class="qa-btn">
+                    <span class="qa-icon">📄</span> Download Prospectus
+                </a>
+                <a href="#" class="qa-btn">
+                    <span class="qa-icon">📅</span> Academic Calendar
+                </a>
+                <a href="#" class="qa-btn">
+                    <span class="qa-icon">💼</span> Placement Portal
+                </a>
+                <a href="#" class="qa-btn">
+                    <span class="qa-icon">🎓</span> Exam Results
+                </a>
+                <a href="#" class="qa-btn">
+                    <span class="qa-icon">📞</span> Contact Us
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ── STATS BAND ── -->
+    <div class="stats-band">
+        <div class="stat-item">
+            <span class="stat-num">43+</span>
+            <span class="stat-label">Years of Excellence</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">8</span>
+            <span class="stat-label">Engineering Branches</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">5000+</span>
+            <span class="stat-label">Students Enrolled</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">200+</span>
+            <span class="stat-label">Faculty Members</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">95%</span>
+            <span class="stat-label">Placement Rate</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">150+</span>
+            <span class="stat-label">Industry Partners</span>
+        </div>
+    </div>
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer">
+        <div class="footer-grid">
+
+            <div class="footer-col">
+                <div class="footer-name">SSGMCE</div>
+                <p>Shri Sant Gajanan Maharaj College of Engineering, Shegaon — a premier engineering institution in Maharashtra committed to academic excellence, research, and industry-ready graduates since 1983.</p>
+                <div class="footer-accreditation">
+                    <span class="accred-badge">NAAC A+</span>
+                    <span class="accred-badge">NBA</span>
+                    <span class="accred-badge">AICTE</span>
+                    <span class="accred-badge">ISO 9001</span>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Academics</a></li>
+                    <li><a href="#">Admission</a></li>
+                    <li><a href="#">Research & Development</a></li>
+                    <li><a href="#">Facilities</a></li>
+                    <li><a href="#">Placement Cell</a></li>
+                    <li><a href="#">NIRF Ranking</a></li>
+                    <li><a href="#">IQAC</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Departments</h4>
+                <ul>
+                    <li><a href="#">Computer Science</a></li>
+                    <li><a href="#">Information Technology</a></li>
+                    <li><a href="#">Electronics & Telecom</a></li>
+                    <li><a href="#">Electrical Engineering</a></li>
+                    <li><a href="#">Mechanical Engineering</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <div class="footer-contact-item">
+                    <span class="fc-icon">📍</span>
+                    <p>Shegaon, Buldhana District,<br>Maharashtra — 444 203</p>
+                </div>
+                <div class="footer-contact-item">
+                    <span class="fc-icon">📞</span>
+                    <p>+91 72629 00100</p>
+                </div>
+                <div class="footer-contact-item">
+                    <span class="fc-icon">✉️</span>
+                    <p>info@ssgmce.ac.in</p>
+                </div>
+                <div class="footer-contact-item">
+                    <span class="fc-icon">🌐</span>
+                    <p>www.ssgmce.ac.in</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <span>© 2026 Shri Sant Gajanan Maharaj College of Engineering, Shegaon. All rights reserved.</span>
+            <span>Designed as part of FabLab Web Development Module</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>

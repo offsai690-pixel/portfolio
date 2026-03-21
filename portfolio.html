@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ram Bhosale — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--y:#FFD600;--b:#111;--o:#FF5200;--w:#fff;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Space Grotesk',sans-serif;background:var(--y);color:var(--b);overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:var(--y);transition:box-shadow .3s;}
+nav.scrolled{box-shadow:0 4px 0 var(--b);}
+.logo{font-size:1rem;font-weight:900;line-height:1.1;letter-spacing:-.02em;text-decoration:none;color:var(--b);}
+nav ul{list-style:none;display:flex;gap:24px;}
+nav ul li a{text-decoration:none;color:var(--b);font-size:.8rem;font-weight:700;padding-bottom:2px;border-bottom:2px solid transparent;transition:border-color .2s;}
+nav ul li a:hover{border-color:var(--b);}
+.nav-icons{display:flex;gap:10px;font-size:1.1rem;}
+.nav-icons a{color:var(--b);text-decoration:none;transition:transform .2s;}
+.nav-icons a:hover{transform:scale(1.25);}
+
+/* HERO */
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:120px 48px 80px;overflow:hidden;}
+.hero-text{z-index:2;}
+.hero-name{font-size:clamp(5rem,11vw,10rem);font-weight:900;line-height:.88;letter-spacing:-.04em;animation:slideUp .8s cubic-bezier(.16,1,.3,1) both;}
+.hero-line{width:55%;height:3px;background:var(--b);margin:26px 0;animation:slideUp .9s .1s cubic-bezier(.16,1,.3,1) both;}
+.hero-sub{font-size:1.05rem;max-width:400px;line-height:1.68;animation:slideUp 1s .2s cubic-bezier(.16,1,.3,1) both;}
+.hero-cta{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap;animation:slideUp 1s .3s cubic-bezier(.16,1,.3,1) both;}
+.btn{display:inline-block;padding:13px 28px;font-size:.9rem;font-weight:800;text-decoration:none;border:2.5px solid var(--b);cursor:pointer;transition:color .22s;position:relative;overflow:hidden;background:none;font-family:inherit;}
+.btn::before{content:'';position:absolute;inset:0;background:var(--b);transform:translateY(101%);transition:transform .22s ease;z-index:0;}
+.btn span{position:relative;z-index:1;}
+.btn:hover::before{transform:translateY(0);}
+.btn:hover{color:var(--y);}
+.btn.filled{background:var(--b);color:var(--y);}
+.btn.filled::before{background:var(--o);}
+.btn.filled:hover{color:var(--w);}
+.hero-art{display:flex;justify-content:center;align-items:center;position:relative;animation:floatIn 1s .4s cubic-bezier(.16,1,.3,1) both;}
+.blob{width:360px;height:360px;background:var(--o);border-radius:60% 40% 55% 45%/50% 60% 40% 50%;display:flex;align-items:center;justify-content:center;animation:blobMorph 7s ease-in-out infinite;position:relative;}
+.blob-inner{font-size:7rem;animation:counterRotate 7s ease-in-out infinite;}
+.fbadge{position:absolute;background:var(--b);color:var(--y);font-weight:800;font-size:.72rem;padding:7px 14px;animation:float1 4s ease-in-out infinite;}
+.fb1{top:30px;right:10px;animation-delay:0s;}
+.fb2{bottom:70px;left:0px;animation-delay:1.5s;}
+.fb3{top:110px;left:-10px;animation-delay:.8s;}
+
+/* FABLAB BAND */
+#fablab-banner{background:var(--b);color:var(--y);padding:18px 48px;display:flex;align-items:center;gap:20px;overflow:hidden;}
+.fab-logo-box{display:flex;align-items:center;gap:14px;flex-shrink:0;}
+.fab-logo-icon{width:56px;height:56px;background:var(--y);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:6px;}
+.fab-logo-icon img{width:44px;height:44px;object-fit:contain;}
+.fab-logo-text{font-weight:800;font-size:1rem;}
+.fab-logo-text small{display:block;font-weight:400;font-size:.72rem;opacity:.6;}
+.ticker-wrap{overflow:hidden;flex:1;}
+.ticker{display:flex;gap:50px;white-space:nowrap;animation:tickerAnim 20s linear infinite;}
+.ticker span{font-weight:700;font-size:.85rem;opacity:.75;}
+
+/* SECTION BASE */
+section{padding:100px 48px;}
+.sl{font-size:.75rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;opacity:.45;margin-bottom:10px;}
+.sh{font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;line-height:.95;letter-spacing:-.03em;margin-bottom:48px;}
+
+/* ABOUT */
+#about{background:var(--b);color:var(--y);}
+#about .sl{color:var(--y);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+.about-card{background:var(--y);color:var(--b);padding:40px;}
+.about-card h3{font-size:1.3rem;font-weight:800;margin-bottom:14px;}
+.about-card p{font-size:.95rem;line-height:1.75;}
+.about-card p+p{margin-top:14px;}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.stat{padding:28px 22px;}
+.stat .n{font-size:2.8rem;font-weight:900;line-height:1;display:block;}
+.stat .l{font-size:.82rem;font-weight:600;margin-top:4px;}
+
+/* EDUCATION */
+#education{background:var(--y);}
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px;}
+.edu-card{background:var(--w);border:2.5px solid var(--b);overflow:hidden;cursor:pointer;transition:transform .25s,box-shadow .25s;}
+.edu-card:hover{transform:translateY(-6px);box-shadow:6px 6px 0 var(--b);}
+.edu-card-top{padding:28px 28px 20px;border-bottom:2px solid var(--b);}
+.edu-icon{font-size:2.2rem;margin-bottom:12px;display:block;}
+.edu-year{font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--o);margin-bottom:6px;}
+.edu-card-top h3{font-size:1.05rem;font-weight:800;line-height:1.25;margin-bottom:4px;}
+.edu-card-top p{font-size:.82rem;opacity:.6;line-height:1.5;}
+.edu-card-bottom{padding:16px 28px;display:flex;align-items:center;justify-content:space-between;font-size:.78rem;font-weight:700;}
+.edu-status{display:flex;align-items:center;gap:6px;}
+.edu-dot{width:8px;height:8px;border-radius:50%;background:var(--o);}
+.edu-dot.done{background:#22c55e;}
+.edu-arrow{font-size:1.2rem;transition:transform .25s;}
+.edu-card:hover .edu-arrow{transform:translate(3px,-3px);}
+
+/* MODULES */
+#modules{background:var(--b);}
+#modules .sl{color:rgba(255,214,0,.5);}
+#modules .sh{color:var(--y);}
+.mods-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px;}
+.mod-card{border:2.5px solid rgba(255,214,0,.2);overflow:hidden;cursor:pointer;transition:transform .25s,box-shadow .25s,border-color .25s;background:rgba(255,214,0,.03);}
+.mod-card:hover{transform:translateY(-6px);box-shadow:6px 6px 0 var(--y);border-color:var(--y);}
+.mod-card-top{padding:28px 28px 18px;}
+.mc-n{font-size:3rem;font-weight:900;opacity:.1;line-height:1;color:var(--y);}
+.mc-t{font-size:1.1rem;font-weight:800;margin:8px 0 6px;color:var(--y);}
+.mc-d{font-size:.84rem;line-height:1.6;color:rgba(255,214,0,.6);}
+.mod-card-bottom{padding:14px 28px;border-top:1px solid rgba(255,214,0,.12);display:flex;align-items:center;justify-content:space-between;}
+.mc-tag{font-size:.72rem;font-weight:800;padding:4px 12px;background:var(--y);color:var(--b);}
+.mc-tag.locked{background:rgba(255,214,0,.1);color:rgba(255,214,0,.4);}
+.mod-arrow{color:var(--y);font-size:1.2rem;transition:transform .25s;}
+.mod-card:hover .mod-arrow{transform:translate(3px,-3px);}
+
+/* WORKS */
+#works{background:var(--y);}
+.works-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:26px;}
+.work-card{background:var(--w);border:2.5px solid var(--b);overflow:hidden;cursor:pointer;transition:transform .25s,box-shadow .25s;}
+.work-card:hover{transform:translateY(-6px);box-shadow:6px 6px 0 var(--b);}
+.wc-top{padding:32px 30px 22px;}
+.wc-e{font-size:2.4rem;margin-bottom:12px;display:block;}
+.wc-t{font-size:1.2rem;font-weight:800;margin-bottom:8px;}
+.wc-d{font-size:.85rem;line-height:1.65;opacity:.7;}
+.wc-bottom{padding:14px 30px;border-top:2px solid var(--b);display:flex;align-items:center;justify-content:space-between;}
+.wc-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.wc-tag{padding:3px 9px;border:1.5px solid var(--b);font-size:.7rem;font-weight:700;}
+.wc-arrow{font-size:1.2rem;font-weight:900;transition:transform .25s;}
+.work-card:hover .wc-arrow{transform:translate(3px,-3px);}
+
+/* ACHIEVEMENTS */
+#achievements{background:var(--o);color:var(--w);}
+#achievements .sh{color:var(--w);}
+#achievements .sl{color:rgba(255,255,255,.5);}
+.ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px;}
+.ach-card{background:var(--w);color:var(--b);padding:34px 30px;border:3px solid var(--b);transition:transform .25s,box-shadow .25s;}
+.ach-card:hover{transform:translateY(-8px) rotate(-1deg);box-shadow:8px 8px 0 var(--b);}
+.ach-medal{font-size:2.8rem;margin-bottom:10px;display:block;}
+.ach-t{font-size:1.1rem;font-weight:800;margin-bottom:8px;}
+.ach-d{font-size:.85rem;line-height:1.65;opacity:.7;}
+
+/* AGREEMENT */
+#student-agreement{background:var(--y);}
+.agr-wrap{border:3px solid var(--b);padding:52px;background:var(--w);max-width:900px;margin:0 auto;position:relative;}
+.agr-wrap::before{content:'OFFICIAL DOCUMENT';position:absolute;top:-14px;left:36px;background:var(--o);color:var(--w);font-size:.65rem;font-weight:800;letter-spacing:.12em;padding:4px 14px;}
+.agr-head{display:flex;align-items:center;gap:18px;margin-bottom:34px;padding-bottom:26px;border-bottom:2.5px solid var(--b);}
+.agr-icon{width:72px;height:72px;background:var(--b);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:8px;}
+.agr-icon img{width:56px;height:56px;object-fit:contain;}
+.agr-ht h2{font-size:1.5rem;font-weight:900;}
+.agr-ht p{font-size:.82rem;opacity:.55;margin-top:4px;}
+.agr-cols{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-bottom:32px;}
+.agr-col h3{font-size:.88rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--b);}
+.agr-col ul{list-style:none;}
+.agr-col ul li{font-size:.84rem;line-height:1.6;padding:4px 0 4px 14px;border-bottom:1px solid rgba(0,0,0,.07);position:relative;}
+.agr-col ul li::before{content:'•';position:absolute;left:0;color:var(--o);font-weight:900;}
+.decl{background:var(--y);padding:26px 30px;border:2px solid var(--b);margin-top:22px;}
+.decl h3{font-size:1rem;font-weight:800;margin-bottom:10px;}
+.decl p{font-size:.9rem;line-height:1.7;}
+.decl .signed{margin-top:18px;padding-top:14px;border-top:2px dashed var(--b);font-weight:800;font-size:1rem;}
+.decl .signed span{color:var(--o);}
+
+/* CONTACT */
+#contact{background:var(--b);color:var(--y);}
+#contact .sh{color:var(--y);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+.contact-links{display:flex;flex-direction:column;gap:14px;}
+.clink{display:flex;align-items:center;gap:14px;padding:18px 22px;border:2px solid rgba(255,214,0,.3);text-decoration:none;color:var(--y);font-weight:700;font-size:.95rem;transition:all .22s;position:relative;overflow:hidden;}
+.clink::before{content:'';position:absolute;inset:0;background:var(--y);transform:scaleX(0);transform-origin:left;transition:transform .22s;}
+.clink:hover::before{transform:scaleX(1);}
+.clink:hover{color:var(--b);}
+.clink>*{position:relative;z-index:1;}
+.cli-icon{font-size:1.3rem;}
+.cli-h{opacity:.55;font-size:.8rem;margin-left:auto;}
+.contact-info .big{font-size:clamp(1.4rem,3.5vw,2.8rem);font-weight:900;line-height:1.05;opacity:.12;word-break:break-all;}
+.contact-info p{margin-top:24px;opacity:.6;font-size:.92rem;line-height:1.7;}
+
+/* FOOTER */
+footer{background:var(--y);color:var(--b);padding:28px 48px;display:flex;align-items:center;justify-content:space-between;border-top:3px solid var(--b);font-size:.82rem;font-weight:700;}
+footer a{color:var(--b);text-decoration:none;}
+footer a:hover{text-decoration:underline;}
+
+/* ══ OVERLAY PANEL SYSTEM ══ */
+.overlay{position:fixed;inset:0;z-index:500;display:flex;align-items:stretch;justify-content:flex-end;pointer-events:none;opacity:0;transition:opacity .35s ease;}
+.overlay.open{opacity:1;pointer-events:all;}
+.overlay-bg{position:absolute;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);}
+.panel{position:relative;z-index:1;width:min(680px,100vw);height:100vh;overflow-y:auto;background:var(--w);border-left:3px solid var(--b);transform:translateX(100%);transition:transform .42s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;}
+.overlay.open .panel{transform:translateX(0);}
+.panel-header{padding:24px 32px 20px;border-bottom:2.5px solid var(--b);position:sticky;top:0;background:var(--w);z-index:2;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.panel-back{display:flex;align-items:center;gap:6px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;cursor:pointer;border:none;background:none;font-family:inherit;opacity:.6;transition:opacity .2s;}
+.panel-back:hover{opacity:1;}
+.panel-close{width:36px;height:36px;border:2.5px solid var(--b);background:none;cursor:pointer;font-size:1rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s,color .2s;}
+.panel-close:hover{background:var(--b);color:var(--y);}
+.panel-body{padding:36px 32px 72px;flex:1;}
+.p-eyebrow{font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--o);margin-bottom:8px;}
+.p-title{font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:.93;letter-spacing:-.03em;margin-bottom:8px;}
+.p-title em{font-style:italic;}
+.p-sub{font-size:.88rem;opacity:.5;margin-bottom:28px;}
+.p-divider{height:2.5px;background:var(--b);margin:22px 0;}
+
+/* Education timeline in panel */
+.edu-timeline .edu-entry{padding:22px 0;border-bottom:1.5px solid rgba(0,0,0,.09);display:grid;grid-template-columns:100px 1fr;gap:16px;}
+.edu-timeline .edu-entry:last-child{border-bottom:none;}
+.ee-year{font-size:.75rem;font-weight:800;color:var(--o);padding-top:3px;line-height:1.4;}
+.ee-info h4{font-size:1rem;font-weight:800;margin-bottom:4px;}
+.ee-info p{font-size:.83rem;opacity:.6;line-height:1.5;}
+.ee-badge{display:inline-block;margin-top:8px;padding:3px 10px;font-size:.68rem;font-weight:800;background:var(--b);color:var(--y);}
+.ee-badge.current{background:var(--o);color:var(--w);}
+
+/* Day tabs */
+.days-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
+.day-btn{padding:8px 14px;border:2px solid var(--b);background:none;cursor:pointer;font-size:.76rem;font-weight:800;font-family:inherit;transition:background .2s,color .2s;}
+.day-btn.active{background:var(--b);color:var(--y);}
+.day-btn:hover:not(.active){background:var(--y);}
+.day-content{display:none;}
+.day-content.active{display:block;}
+.day-thumb{width:100%;aspect-ratio:16/9;background:var(--b);display:flex;align-items:center;justify-content:center;color:var(--y);font-size:.85rem;font-weight:700;margin-bottom:18px;border:2px solid var(--b);}
+.day-h{font-size:1.15rem;font-weight:800;margin-bottom:6px;}
+.day-p{font-size:.86rem;line-height:1.65;opacity:.65;margin-bottom:16px;}
+.topics-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;opacity:.45;margin-bottom:8px;}
+.topics-list{list-style:none;margin-bottom:16px;}
+.topics-list li{font-size:.86rem;line-height:1.6;padding:4px 0 4px 16px;border-bottom:1px solid rgba(0,0,0,.07);position:relative;}
+.topics-list li::before{content:'→';position:absolute;left:0;color:var(--o);font-size:.72rem;}
+.assign-note{padding:10px 14px;background:#fffbdc;border:1.5px solid #d4a800;font-size:.76rem;line-height:1.6;color:#7a5500;margin-bottom:10px;border-radius:0;}
+.assign-link{display:flex;align-items:center;gap:10px;padding:14px 18px;background:var(--y);border:2px solid var(--b);text-decoration:none;color:var(--b);font-weight:800;font-size:.86rem;transition:background .22s,color .22s,transform .22s;margin-bottom:6px;}
+.assign-link:hover{background:var(--b);color:var(--y);transform:translateX(4px);}
+.assign-link .ai{font-size:1.1rem;}
+.assign-link .ah{margin-left:auto;font-size:.72rem;opacity:.55;}
+
+/* Work panel links */
+.work-hero{width:100%;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:5rem;background:#f4f4f4;border:2px solid var(--b);margin-bottom:20px;}
+.wp-links{display:flex;flex-direction:column;gap:10px;margin-top:20px;}
+.wp-link{display:flex;align-items:center;gap:12px;padding:15px 18px;border:2px solid var(--b);text-decoration:none;color:var(--b);font-weight:800;font-size:.88rem;transition:all .22s;}
+.wp-link:hover{background:var(--b);color:var(--y);transform:translateX(4px);}
+.wp-link .wi{font-size:1.2rem;}
+.wp-link .wd{font-size:.73rem;font-weight:500;opacity:.5;margin-left:auto;}
+.wp-note{padding:10px 14px;background:var(--y);border:1.5px solid var(--b);font-size:.76rem;font-weight:700;margin-top:10px;}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(48px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* KEYFRAMES */
+@keyframes slideUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+@keyframes floatIn{from{opacity:0;transform:translateX(60px) scale(.9);}to{opacity:1;transform:translateX(0) scale(1);}}
+@keyframes float1{0%,100%{transform:translateY(0) rotate(-2deg);}50%{transform:translateY(-10px) rotate(2deg);}}
+@keyframes blobMorph{0%,100%{border-radius:60% 40% 55% 45%/50% 60% 40% 50%;}33%{border-radius:40% 60% 45% 55%/60% 40% 60% 40%;}66%{border-radius:55% 45% 60% 40%/45% 55% 45% 55%;}}
+@keyframes counterRotate{0%,100%{transform:rotate(-8deg);}50%{transform:rotate(8deg);}}
+@keyframes tickerAnim{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(1.5);}}
+
+@media(max-width:900px){
+  nav{padding:14px 20px;} nav ul{display:none;}
+  #hero{grid-template-columns:1fr;padding:100px 20px 60px;} .hero-art{display:none;}
+  section{padding:72px 20px;}
+  .about-grid,.contact-grid,.agr-cols{grid-template-columns:1fr;}
+  .agr-wrap{padding:28px 20px;}
+  footer{flex-direction:column;gap:8px;text-align:center;padding:24px 20px;}
+  .panel{width:100vw;border-left:none;}
+  .panel-header{padding:18px 20px;}
+  .panel-body{padding:24px 20px 60px;}
+  #fablab-banner{padding:14px 20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nb">
+  <div style="display:flex;align-items:center;gap:14px;">
+    <img src="Fablab logo.png" alt="FabLab Logo" style="width:38px;height:38px;object-fit:contain;">
+    <a class="logo" href="#">Ram<br>Bhosale</a>
+  </div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#modules">FabLab</a></li>
+    <li><a href="#works">Works</a></li>
+    <li><a href="#achievements">Awards</a></li>
+    <li><a href="#student-agreement">Agreement</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-icons">
+    <a href="https://www.instagram.com/ram_54a?igsh=MWEyb2FpZ2J0MXFteQ==" target="_blank">📸</a>
+    <a href="https://www.linkedin.com/in/ram-bhosale-735203384" target="_blank">💼</a>
+    <a href="https://x.com/DariusV009" target="_blank">🐦</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-text">
+    <h1 class="hero-name">Ram<br>Bhosale</h1>
+    <div class="hero-line"></div>
+    <p class="hero-sub"><strong>1st Year Mechanical Engineering</strong> student at SSGMCE Shegaon — building things on the web and in the workshop.</p>
+    <div class="hero-cta">
+      <a href="#works" class="btn filled"><span>See My Work</span></a>
+      <a href="#contact" class="btn"><span>Get in Touch</span></a>
+    </div>
+  </div>
+  <div class="hero-art">
+    <div class="blob"><span class="blob-inner">⚙️</span></div>
+    <div class="fbadge fb1">Web Dev ✓</div>
+    <div class="fbadge fb2">Mechanical 🔧</div>
+    <div class="fbadge fb3">FabLab 🏭</div>
+  </div>
+</section>
+
+<!-- FABLAB BANNER -->
+<div id="fablab-banner">
+  <div class="fab-logo-box">
+    <div class="fab-logo-icon"><img src="Fablab logo.png" alt="FabLab Logo"></div>
+    <div class="fab-logo-text">FabLab SSGMCE<small>Shegaon, Maharashtra</small></div>
+  </div>
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span>Digital Fabrication</span><span>★</span><span>Web Development</span><span>★</span><span>HTML · CSS · JS</span><span>★</span><span>Mechanical Engineering</span><span>★</span><span>Innovation</span><span>★</span><span>SSGMCE Shegaon</span><span>★</span>
+      <span>Digital Fabrication</span><span>★</span><span>Web Development</span><span>★</span><span>HTML · CSS · JS</span><span>★</span><span>Mechanical Engineering</span><span>★</span><span>Innovation</span><span>★</span><span>SSGMCE Shegaon</span><span>★</span>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="sl">Who I Am</p>
+  <h2 class="sh">About<br>Me</h2>
+  <div class="about-grid">
+    <div class="about-card reveal">
+      <h3>Hi, I'm Ram 👋</h3>
+      <p>I'm a first-year Mechanical Engineering student at SSGMCE Shegaon with a passion for both physical making and digital building. Through FabLab, I've discovered the exciting intersection of engineering and technology.</p>
+      <p>I believe great engineers understand both atoms and bits — so I've been learning to build for the web while studying machines.</p>
+    </div>
+    <div class="stats-grid reveal">
+      <div class="stat" style="background:var(--o);color:var(--w);"><span class="n">1st</span><span class="l">Year Mech. Engg.</span></div>
+      <div class="stat" style="background:var(--b);color:var(--y);"><span class="n">1</span><span class="l">Module Completed</span></div>
+      <div class="stat" style="background:var(--y);color:var(--b);border:2px solid rgba(0,0,0,.1);"><span class="n">🥉</span><span class="l">National Level Prize</span></div>
+      <div class="stat" style="background:var(--w);color:var(--b);border:2.5px solid var(--y);"><span class="n">3+</span><span class="l">Projects Built</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <p class="sl">Academic Journey</p>
+  <h2 class="sh">Education</h2>
+  <div class="edu-grid">
+    <div class="edu-card reveal" onclick="openPanel('p-edu')">
+      <div class="edu-card-top">
+        <span class="edu-icon">🏫</span>
+        <div class="edu-year">2022 · 10th SSC</div>
+        <h3>Jagruti Dnyanpeeth</h3>
+        <p>Ambetakli<br>Maharashtra State Board</p>
+      </div>
+      <div class="edu-card-bottom">
+        <div class="edu-status"><span class="edu-dot done"></span> Completed</div>
+        <span class="edu-arrow">↗</span>
+      </div>
+    </div>
+    <div class="edu-card reveal" onclick="openPanel('p-edu')">
+      <div class="edu-card-top">
+        <span class="edu-icon">📚</span>
+        <div class="edu-year">2024 · 12th HSC</div>
+        <h3>L.T. Bhayyabhau Patil High School</h3>
+        <p>Boriadgaon<br>Maharashtra State Board</p>
+      </div>
+      <div class="edu-card-bottom">
+        <div class="edu-status"><span class="edu-dot done"></span> Completed</div>
+        <span class="edu-arrow">↗</span>
+      </div>
+    </div>
+    <div class="edu-card reveal" onclick="openPanel('p-edu')">
+      <div class="edu-card-top">
+        <span class="edu-icon">⚙️</span>
+        <div class="edu-year">2025–2029 · B.E.</div>
+        <h3>Mechanical Engineering</h3>
+        <p>Shri Sant Gajanan Maharaj College of Engineering, Shegaon</p>
+      </div>
+      <div class="edu-card-bottom">
+        <div class="edu-status"><span class="edu-dot" style="background:var(--o);animation:pulse 1.5s infinite;"></span> In Progress</div>
+        <span class="edu-arrow">↗</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FABLAB MODULES -->
+<section id="modules">
+  <p class="sl">FabLab Journey</p>
+  <div style="display:flex;align-items:center;gap:18px;margin-bottom:0;">
+    <img src="Fablab logo.png" alt="FabLab Logo" style="width:56px;height:56px;object-fit:contain;flex-shrink:0;">
+    <h2 class="sh" style="margin-bottom:0;">My<br>Modules</h2>
+  </div>
+  <div style="height:48px;"></div>
+  <div class="mods-grid">
+    <div class="mod-card reveal" onclick="openPanel('p-webdev')">
+      <div class="mod-card-top">
+        <div class="mc-n">01</div>
+        <h3 class="mc-t">🌐 Web Development</h3>
+        <p class="mc-d">HTML to JavaScript across 7 days. Built real-world webpages with layouts, forms and interactivity at FabLab SSGMCE.</p>
+      </div>
+      <div class="mod-card-bottom"><span class="mc-tag">✅ Completed</span><span class="mod-arrow">↗</span></div>
+    </div>
+    <div class="mod-card reveal" style="opacity:.4;cursor:not-allowed;">
+      <div class="mod-card-top">
+        <div class="mc-n">02</div>
+        <h3 class="mc-t">📐 CAD</h3>
+        <p class="mc-d">Parametric modeling, 2D drafting and 3D assemblies using industry tools.</p>
+      </div>
+      <div class="mod-card-bottom"><span class="mc-tag locked">🔒 Upcoming</span></div>
+    </div>
+    <div class="mod-card reveal" style="opacity:.4;cursor:not-allowed;">
+      <div class="mod-card-top">
+        <div class="mc-n">03</div>
+        <h3 class="mc-t">🖨️ 3D Printing</h3>
+        <p class="mc-d">FDM printing, slicer software and material selection workflows.</p>
+      </div>
+      <div class="mod-card-bottom"><span class="mc-tag locked">🔒 Upcoming</span></div>
+    </div>
+    <div class="mod-card reveal" style="opacity:.4;cursor:not-allowed;">
+      <div class="mod-card-top">
+        <div class="mc-n">04</div>
+        <h3 class="mc-t">⚡ Laser Cutting</h3>
+        <p class="mc-d">Precision digital fabrication with CO2 lasers and vector design.</p>
+      </div>
+      <div class="mod-card-bottom"><span class="mc-tag locked">🔒 Upcoming</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section id="works">
+  <p class="sl">What I've Built</p>
+  <h2 class="sh">Works &amp;<br>Projects</h2>
+  <div class="works-grid">
+    <div class="work-card reveal" onclick="openPanel('p-amazon')">
+      <div class="wc-top">
+        <span class="wc-e">🛒</span>
+        <h3 class="wc-t">Amazon Clone</h3>
+        <p class="wc-d">Full front-end clone of Amazon's homepage — product cards, navbar, hero banner and cart UI built in pure HTML &amp; CSS.</p>
+      </div>
+      <div class="wc-bottom"><div class="wc-tags"><span class="wc-tag">HTML</span><span class="wc-tag">CSS</span></div><span class="wc-arrow">↗</span></div>
+    </div>
+    <div class="work-card reveal" onclick="openPanel('p-grocery')">
+      <div class="wc-top">
+        <span class="wc-e">🥦</span>
+        <h3 class="wc-t">Own Grocery Store</h3>
+        <p class="wc-d">Custom grocery store website — product catalogue, categories and interactive layout built from scratch.</p>
+      </div>
+      <div class="wc-bottom"><div class="wc-tags"><span class="wc-tag">HTML</span><span class="wc-tag">CSS</span><span class="wc-tag">JS</span></div><span class="wc-arrow">↗</span></div>
+    </div>
+    <div class="work-card reveal" onclick="openPanel('p-ssgmce')">
+      <div class="wc-top">
+        <span class="wc-e">🏛️</span>
+        <h3 class="wc-t">SSGMCE Prototype</h3>
+        <p class="wc-d">Redesign prototype for SSGMCE's college website — modern layout, improved navigation and mobile-responsive.</p>
+      </div>
+      <div class="wc-bottom"><div class="wc-tags"><span class="wc-tag">HTML</span><span class="wc-tag">CSS</span><span class="wc-tag">Prototype</span></div><span class="wc-arrow">↗</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <p class="sl">Recognition</p>
+  <h2 class="sh">Achievements</h2>
+  <div class="ach-grid">
+    <div class="ach-card reveal">
+      <span class="ach-medal">🥉</span>
+      <h3 class="ach-t">3rd Prize — National Level Project Expo</h3>
+      <p class="ach-d">Awarded 3rd prize at the National Level Mechanical Mecathon at VB Kolte College, Malkapur. Competed against engineering teams from across the country.</p>
+    </div>
+    <div class="ach-card reveal">
+      <span class="ach-medal">✅</span>
+      <h3 class="ach-t">FabLab Web Dev Module Certified</h3>
+      <p class="ach-d">Successfully completed Module 01 — Web Development at FabLab SSGMCE, certified in HTML, CSS and JavaScript.</p>
+    </div>
+    <div class="ach-card reveal">
+      <span class="ach-medal">🏭</span>
+      <h3 class="ach-t">FabLab Certified Maker</h3>
+      <p class="ach-d">Enrolled and actively contributing to FabLab SSGMCE Shegaon — learning digital fabrication and modern making skills.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AGREEMENT -->
+<section id="student-agreement">
+  <p class="sl">Official</p>
+  <h2 class="sh">Student<br>Agreement</h2>
+  <div class="agr-wrap reveal">
+    <div class="agr-head">
+      <div class="agr-icon"><img src="Fablab logo.png" alt="FabLab Logo"></div>
+      <div class="agr-ht"><h2>📜 FabLab Student Agreement</h2><p>FabLab, SSGMCE — Official Student Commitment Document</p></div>
+    </div>
+    <div class="agr-cols">
+      <div class="agr-col">
+        <h3>FabLab SSGMCE is responsible for:</h3>
+        <ul>
+          <li>Teaching principles and practices of digital fabrication</li>
+          <li>Arranging lectures, recitations, meetings, and events for the class</li>
+          <li>Evaluating and providing feedback on student work</li>
+          <li>Offering clear standards for completing assignments</li>
+          <li>Certifying and archiving student progress</li>
+          <li>Supervising class preparation</li>
+          <li>Reviewing prospective students, instructors, and labs</li>
+          <li>Providing central staff and infrastructure</li>
+          <li>Fund-raising for costs not covered by student tuition</li>
+          <li>Managing and reporting on the program's finances, results, and impacts</li>
+          <li>Publicizing the program</li>
+        </ul>
+      </div>
+      <div class="agr-col">
+        <h3>I am a FabLab, SSGMCE student, responsible for:</h3>
+        <ul>
+          <li>Attending class lectures and participating in reviews</li>
+          <li>Developing and documenting projects assigned to introduce and demonstrate skills</li>
+          <li>Honestly reporting on my work, and appropriately attributing others' work</li>
+          <li>Working safely</li>
+          <li>Leaving workspaces in the same (or better) condition than I found them</li>
+          <li>Participating in the upkeep of my lab</li>
+          <li>Ensuring my tuition to cover local and central class costs is covered</li>
+          <li>Following locally applicable health and safety guidance</li>
+          <li>Promoting a respectful environment free of harassment and discrimination</li>
+        </ul>
+      </div>
+    </div>
+    <div class="decl">
+      <h3>✍️ Declaration</h3>
+      <p>Signed by committing this file in my repository,</p>
+      <div class="signed">Name: <span>Ram Bhosale</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="sl" style="color:rgba(255,214,0,.45);">Let's Connect</p>
+  <h2 class="sh">Get in<br>Touch</h2>
+  <div class="contact-grid">
+    <div class="contact-links reveal">
+      <a href="https://www.instagram.com/ram_54a?igsh=MWEyb2FpZ2J0MXFteQ==" target="_blank" class="clink"><span class="cli-icon">📸</span><span>Instagram</span><span class="cli-h">@ram_54a</span></a>
+      <a href="https://www.linkedin.com/in/ram-bhosale-735203384" target="_blank" class="clink"><span class="cli-icon">💼</span><span>LinkedIn</span><span class="cli-h">Ram Bhosale</span></a>
+      <a href="https://x.com/DariusV009" target="_blank" class="clink"><span class="cli-icon">🐦</span><span>Twitter / X</span><span class="cli-h">@DariusV009</span></a>
+    </div>
+    <div class="contact-info reveal">
+      <div class="big">ram.bhosale<br>ssgmce</div>
+      <p>Currently studying Mechanical Engineering at SSGMCE Shegaon. Open to collaboration, projects, and conversations about tech + engineering.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 Ram Bhosale · SSGMCE Shegaon</div>
+  <div>
+    <a href="https://www.instagram.com/ram_54a?igsh=MWEyb2FpZ2J0MXFteQ==" target="_blank">Instagram</a> ·
+    <a href="https://www.linkedin.com/in/ram-bhosale-735203384" target="_blank">LinkedIn</a> ·
+    <a href="https://x.com/DariusV009" target="_blank">Twitter</a>
+  </div>
+</footer>
+
+<!-- ══════════════════════════
+     OVERLAY PANELS
+══════════════════════════ -->
+
+<!-- EDUCATION PANEL -->
+<div class="overlay" id="p-edu">
+  <div class="overlay-bg" onclick="closePanel('p-edu')"></div>
+  <div class="panel">
+    <div class="panel-header">
+      <button class="panel-back" onclick="closePanel('p-edu')">← Back to Portfolio</button>
+      <button class="panel-close" onclick="closePanel('p-edu')">✕</button>
+    </div>
+    <div class="panel-body">
+      <div class="p-eyebrow">Academic Journey</div>
+      <h2 class="p-title">Education &amp;<br><em>Qualifications</em></h2>
+      <p class="p-sub">Full educational background — school to engineering college.</p>
+      <div class="p-divider"></div>
+      <div class="edu-timeline">
+        <div class="edu-entry">
+          <div class="ee-year">2022<br>10th · SSC</div>
+          <div class="ee-info">
+            <h4>Jagruti Dnyanpeeth</h4>
+            <p>Ambetakli<br>Maharashtra State Board</p>
+            <span class="ee-badge">✅ Completed</span>
+          </div>
+        </div>
+        <div class="edu-entry">
+          <div class="ee-year">2024<br>12th · HSC</div>
+          <div class="ee-info">
+            <h4>L.T. Bhayyabhau Patil High School &amp; Jr. College</h4>
+            <p>Boriadgaon<br>Maharashtra State Board</p>
+            <span class="ee-badge">✅ Completed</span>
+          </div>
+        </div>
+        <div class="edu-entry">
+          <div class="ee-year">2025–2029<br>B.E.</div>
+          <div class="ee-info">
+            <h4>Mechanical Engineering</h4>
+            <p>Shri Sant Gajanan Maharaj College of Engineering, Shegaon<br>Sant Gadge Baba Amravati University</p>
+            <span class="ee-badge current">🟠 In Progress · 1st Year</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WEB DEV MODULE PANEL -->
+<div class="overlay" id="p-webdev">
+  <div class="overlay-bg" onclick="closePanel('p-webdev')"></div>
+  <div class="panel">
+    <div class="panel-header">
+      <button class="panel-back" onclick="closePanel('p-webdev')">← Back to FabLab Modules</button>
+      <button class="panel-close" onclick="closePanel('p-webdev')">✕</button>
+    </div>
+    <div class="panel-body">
+      <div class="p-eyebrow">Module 01 · 7 Days · HTML · CSS · JS · GitHub</div>
+      <h2 class="p-title">Web<br><em>Development</em></h2>
+      <p class="p-sub">FabLab SSGMCE — ✅ Completed</p>
+      <div class="p-divider"></div>
+      <div class="days-nav">
+        <button class="day-btn active" onclick="switchDay(this,'wd-d1')">Day 1</button>
+        <button class="day-btn" onclick="switchDay(this,'wd-d2')">Day 2</button>
+        <button class="day-btn" onclick="switchDay(this,'wd-d3')">Day 3</button>
+        <button class="day-btn" onclick="switchDay(this,'wd-d4')">Day 4</button>
+        <button class="day-btn" onclick="switchDay(this,'wd-d5')">Day 5</button>
+        <button class="day-btn" onclick="switchDay(this,'wd-d6')">Day 6</button>
+        <button class="day-btn" onclick="switchDay(this,'wd-d7')">Day 7</button>
+      </div>
+
+      <div class="day-content active" id="wd-d1">
+        <div class="day-thumb">📄 Basic HTML Tags — Day 01</div>
+        <h3 class="day-h">Day 01 — Basic HTML Tags</h3>
+        <p class="day-p">Getting started with the web. Understanding how browsers work, HTML document structure, and writing your first webpage from scratch.</p>
+        <p class="topics-label">Topics Covered</p>
+        <ul class="topics-list">
+          <li>What is the internet and how browsers render pages</li>
+          <li>HTML document structure — DOCTYPE, head, body</li>
+          <li>Basic tags: headings, paragraphs, links, lists</li>
+          <li>Creating and opening your first .html file</li>
+        </ul>
+        <div class="assign-note">⚠️ Paste your assignment's hosted URL below. If not hosted, replace the screenshot placeholder with a clear image of your work.</div>
+        <a href="#" class="assign-link" onclick="return false;"><span class="ai">🔗</span><span>Day 1 Assignment — Add Your Hosted Link</span><span class="ah">replace href="#" with your URL</span></a>
+      </div>
+
+      <div class="day-content" id="wd-d2">
+        <div class="day-thumb">🖼️ Image, Anchor, Table Tags — Day 02</div>
+        <h3 class="day-h">Day 02 — Image, Anchor, Video/Audio &amp; Table Tags</h3>
+        <p class="day-p">Embedding rich media — images, video, audio — and structuring tabular data with HTML tables.</p>
+        <p class="topics-label">Topics Covered</p>
+        <ul class="topics-list">
+          <li>img tag — src, alt, width, height attributes</li>
+          <li>video and audio tags with controls</li>
+          <li>HTML table: table, tr, th, td elements</li>
+          <li>Table attributes: colspan, rowspan, border</li>
+        </ul>
+        <div class="assign-note">⚠️ Add your Day 2 assignment's hosted link below, or replace with a screenshot.</div>
+        <a href="#" class="assign-link" onclick="return false;"><span class="ai">🔗</span><span>Day 2 Assignment — Add Your Hosted Link</span><span class="ah">replace href="#" with your URL</span></a>
+      </div>
+
+      <div class="day-content" id="wd-d3">
+        <div class="day-thumb">🎨 CSS &amp; Form Tags — Day 03</div>
+        <h3 class="day-h">Day 03 — CSS &amp; Form Tags</h3>
+        <p class="day-p">Styling pages with CSS and collecting user input with HTML forms — selectors, box model, input types and validation.</p>
+        <p class="topics-label">Topics Covered</p>
+        <ul class="topics-list">
+          <li>CSS selectors, properties and the box model</li>
+          <li>Colors, fonts, borders, padding, margin</li>
+          <li>HTML form tag — action, method attributes</li>
+          <li>Input types: text, email, password, submit, radio, checkbox</li>
+        </ul>
+        <div class="assign-note">⚠️ Add your Day 3 assignment's hosted link below.</div>
+        <a href="#" class="assign-link" onclick="return false;"><span class="ai">🔗</span><span>Day 3 Assignment — Add Your Hosted Link</span><span class="ah">replace href="#" with your URL</span></a>
+      </div>
+
+      <div class="day-content" id="wd-d4">
+        <div class="day-thumb">📦 Flexbox — Day 04</div>
+        <h3 class="day-h">Day 04 — Flexbox</h3>
+        <p class="day-p">Master CSS Flexbox to build responsive, dynamic page layouts with precision control over alignment, spacing and ordering.</p>
+        <p class="topics-label">Topics Covered</p>
+        <ul class="topics-list">
+          <li>display: flex — container vs items</li>
+          <li>flex-direction, justify-content, align-items</li>
+          <li>flex-wrap, gap, flex-grow, flex-shrink</li>
+          <li>Building a responsive nav bar and card layout</li>
+        </ul>
+        <div class="assign-note">⚠️ Add your Day 4 assignment's hosted link below.</div>
+        <a href="#" class="assign-link" onclick="return false;"><span class="ai">🔗</span><span>Day 4 Assignment — Add Your Hosted Link</span><span class="ah">replace href="#" with your URL</span></a>
+      </div>
+
+      <div class="day-content" id="wd-d5">
+        <div class="day-thumb">⚡ JavaScript — Day 05</div>
+        <h3 class="day-h">Day 05 — JavaScript</h3>
+        <p class="day-p">Bring pages to life with JavaScript — variables, functions, DOM manipulation and event handling for interactive web experiences.</p>
+        <p class="topics-label">Topics Covered</p>
+        <ul class="topics-list">
+          <li>Variables: var, let, const</li>
+          <li>Functions, conditionals, loops</li>
+          <li>DOM selection: getElementById, querySelector</li>
+          <li>Events: onclick, addEventListener</li>
+        </ul>
+        <div class="assign-note">⚠️ Add your Day 5 assignment's hosted link below.</div>
+        <a href="#" class="assign-link" onclick="return false;"><span class="ai">🔗</span><span>Day 5 Assignment — Add Your Hosted Link</span><span class="ah">replace href="#" with your URL</span></a>
+      </div>
+
+      <div class="day-content" id="wd-d6">
+        <div class="day-thumb">🐙 Git &amp; GitHub — Day 06</div>
+        <h3 class="day-h">Day 06 — Introduction to GitHub &amp; Git</h3>
+        <p class="day-p">Version control is a superpower. Git fundamentals and GitHub for hosting, tracking and collaborating on your code.</p>
+        <p class="topics-label">Topics Covered</p>
+        <ul class="topics-list">
+          <li>What is version control and why it matters</li>
+          <li>git init, git add, git commit, git push</li>
+          <li>Creating a GitHub repository</li>
+          <li>Branches, pull requests, merge basics</li>
+        </ul>
+        <div class="assign-note">⚠️ Add your Day 6 GitHub repository link below.</div>
+        <a href="#" class="assign-link" onclick="return false;"><span class="ai">🐙</span><span>Day 6 Assignment — Add Your GitHub Repo Link</span><span class="ah">replace href="#" with your GitHub URL</span></a>
+      </div>
+
+      <div class="day-content" id="wd-d7">
+        <div class="day-thumb">✅ To-Do List &amp; External CSS/JS — Day 07</div>
+        <h3 class="day-h">Day 07 — To-Do List &amp; External CSS/JS</h3>
+        <p class="day-p">Build a fully functional to-do list app while learning to separate HTML, CSS and JS into external files for clean, maintainable code.</p>
+        <p class="topics-label">Topics Covered</p>
+        <ul class="topics-list">
+          <li>Linking external stylesheet with link tag</li>
+          <li>Linking external JS with script src tag</li>
+          <li>Building a to-do list: add, complete, delete tasks</li>
+          <li>localStorage for persistent data across sessions</li>
+        </ul>
+        <div class="assign-note">⚠️ Add your Day 7 To-Do app hosted link below.</div>
+        <a href="#" class="assign-link" onclick="return false;"><span class="ai">🔗</span><span>Day 7 Assignment — Add Your Hosted Link</span><span class="ah">replace href="#" with your URL</span></a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- AMAZON PANEL -->
+<div class="overlay" id="p-amazon">
+  <div class="overlay-bg" onclick="closePanel('p-amazon')"></div>
+  <div class="panel">
+    <div class="panel-header">
+      <button class="panel-back" onclick="closePanel('p-amazon')">← Back to Portfolio</button>
+      <button class="panel-close" onclick="closePanel('p-amazon')">✕</button>
+    </div>
+    <div class="panel-body">
+      <div class="p-eyebrow">Project 01 · HTML · CSS</div>
+      <h2 class="p-title">Amazon<br><em>Clone</em></h2>
+      <p class="p-sub">Front-end recreation of Amazon India's homepage.</p>
+      <div class="p-divider"></div>
+      <div class="work-hero">🛒</div>
+      <p style="font-size:.88rem;line-height:1.7;opacity:.65;margin-bottom:18px;">A complete front-end clone of Amazon India's homepage — including the header with search bar, product category navigation, hero banner, product cards grid, and multi-column footer. Built with pure HTML and CSS focusing on layout accuracy and responsiveness.</p>
+      <p class="topics-label">What's Included</p>
+      <ul class="topics-list" style="margin-bottom:20px;">
+        <li>Amazon-style header — logo, search bar, cart icon</li>
+        <li>Navigation bar with product categories</li>
+        <li>Hero promotional banner</li>
+        <li>Product card grid layout</li>
+        <li>Responsive multi-column footer</li>
+      </ul>
+      <div class="wp-note">📌 Teacher's Note: Links below should open the working webpage. If not yet hosted, attach a clear screenshot by replacing the emoji placeholder with an &lt;img&gt; tag.</div>
+      <div class="wp-links">
+        <a href="#" target="_blank" class="wp-link" onclick="this.href='#'; alert('⚠️ Add your live webpage URL here — replace # in href with your hosted link (e.g. GitHub Pages URL).'); return false;">
+          <span class="wi">🌐</span><span>View Live Webpage</span><span class="wd">Add your hosted URL here →</span>
+        </a>
+        <a href="#" target="_blank" class="wp-link" onclick="this.href='#'; alert('⚠️ Add your GitHub repository URL here.'); return false;">
+          <span class="wi">💻</span><span>View Source on GitHub</span><span class="wd">Add your GitHub repo URL →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GROCERY PANEL -->
+<div class="overlay" id="p-grocery">
+  <div class="overlay-bg" onclick="closePanel('p-grocery')"></div>
+  <div class="panel">
+    <div class="panel-header">
+      <button class="panel-back" onclick="closePanel('p-grocery')">← Back to Portfolio</button>
+      <button class="panel-close" onclick="closePanel('p-grocery')">✕</button>
+    </div>
+    <div class="panel-body">
+      <div class="p-eyebrow">Project 02 · HTML · CSS · JavaScript</div>
+      <h2 class="p-title">Own Grocery<br><em>Store</em></h2>
+      <p class="p-sub">Custom grocery store webpage built from scratch.</p>
+      <div class="p-divider"></div>
+      <div class="work-hero">🥦</div>
+      <p style="font-size:.88rem;line-height:1.7;opacity:.65;margin-bottom:18px;">A complete grocery store website designed and built independently — featuring a product catalogue across categories, interactive JavaScript-powered UI, cart interaction, and a clean modern design that works on all screen sizes.</p>
+      <p class="topics-label">What's Included</p>
+      <ul class="topics-list" style="margin-bottom:20px;">
+        <li>Product catalogue with multiple categories</li>
+        <li>Interactive product cards with JavaScript</li>
+        <li>Shopping cart functionality</li>
+        <li>Clean, modern visual design</li>
+        <li>Mobile-responsive layout</li>
+      </ul>
+      <div class="wp-note">📌 Teacher's Note: Links below should open the working webpage. Replace # with your actual hosted URL.</div>
+      <div class="wp-links">
+        <a href="#" target="_blank" class="wp-link" onclick="this.href='#'; alert('⚠️ Add your live webpage URL here — replace # in href with your hosted link.'); return false;">
+          <span class="wi">🌐</span><span>View Live Webpage</span><span class="wd">Add your hosted URL here →</span>
+        </a>
+        <a href="#" target="_blank" class="wp-link" onclick="this.href='#'; alert('⚠️ Add your GitHub repository URL here.'); return false;">
+          <span class="wi">💻</span><span>View Source on GitHub</span><span class="wd">Add your GitHub repo URL →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SSGMCE PANEL -->
+<div class="overlay" id="p-ssgmce">
+  <div class="overlay-bg" onclick="closePanel('p-ssgmce')"></div>
+  <div class="panel">
+    <div class="panel-header">
+      <button class="panel-back" onclick="closePanel('p-ssgmce')">← Back to Portfolio</button>
+      <button class="panel-close" onclick="closePanel('p-ssgmce')">✕</button>
+    </div>
+    <div class="panel-body">
+      <div class="p-eyebrow">Project 03 · HTML · CSS · Prototype</div>
+      <h2 class="p-title">SSGMCE<br><em>Prototype</em></h2>
+      <p class="p-sub">College website redesign — modern, clean and responsive.</p>
+      <div class="p-divider"></div>
+      <div class="work-hero">🏛️</div>
+      <p style="font-size:.88rem;line-height:1.7;opacity:.65;margin-bottom:18px;">A prototype redesign of the Shri Sant Gajanan Maharaj College of Engineering website — focused on improved UX, modern visual design, clear navigation, and mobile-first responsiveness. Shows what the official college site could look like with a modern refresh.</p>
+      <p class="topics-label">What's Included</p>
+      <ul class="topics-list" style="margin-bottom:20px;">
+        <li>Redesigned homepage with full hero section</li>
+        <li>Improved navigation bar and menu structure</li>
+        <li>Departments and courses overview section</li>
+        <li>News and events highlights section</li>
+        <li>Mobile-responsive across all screen sizes</li>
+      </ul>
+      <div class="wp-note">📌 Teacher's Note: Links below should open the working webpage. Replace # with your actual hosted URL.</div>
+      <div class="wp-links">
+        <a href="#" target="_blank" class="wp-link" onclick="this.href='#'; alert('⚠️ Add your live webpage URL here — replace # in href with your hosted link.'); return false;">
+          <span class="wi">🌐</span><span>View Live Prototype</span><span class="wd">Add your hosted URL here →</span>
+        </a>
+        <a href="#" target="_blank" class="wp-link" onclick="this.href='#'; alert('⚠️ Add your GitHub repository URL here.'); return false;">
+          <span class="wi">💻</span><span>View Source on GitHub</span><span class="wd">Add your GitHub repo URL →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPTS -->
+<script>
+// Navbar scroll
+const nb = document.getElementById('nb');
+window.addEventListener('scroll', () => nb.classList.toggle('scrolled', scrollY > 60));
+
+// Scroll reveal
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Open / close panels
+function openPanel(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closePanel(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Close on Escape
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.overlay.open').forEach(o => {
+      o.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  }
+});
+
+// Day tabs
+function switchDay(btn, dayId) {
+  const panel = btn.closest('.panel-body');
+  panel.querySelectorAll('.day-btn').forEach(b => b.classList.remove('active'));
+  panel.querySelectorAll('.day-content').forEach(d => d.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(dayId).classList.add('active');
+}
+</script>
+</body>
+</html>
