@@ -83,17 +83,13 @@ nav ul li a:hover {
     transition: color .2s, transform .2s;
     display: flex;
     align-items: center;
-}
-
-.nav-icons a svg {
-    width: 22px;
-    height: 22px;
-    display: block;
+    font-size: 1.2rem;
+    line-height: 1;
 }
 
 .nav-icons a:hover {
     color: var(--o);
-    transform: scale(1.15);
+    transform: scale(1.2);
 }
 
 #hero {
@@ -892,13 +888,9 @@ section {
 .cli-icon {
     display: flex;
     align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
     flex-shrink: 0;
-}
-
-.cli-icon svg {
-    width: 20px;
-    height: 20px;
-    display: block;
 }
 
 .cli-h {
