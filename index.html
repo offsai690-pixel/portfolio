@@ -92,7 +92,7 @@
       <div class="stats-grid reveal">
         <div class="stat" style="background:var(--o);color:var(--w);"><span class="n">1st</span><span class="l">Year
             Mech. Engg.</span></div>
-        <div class="stat" style="background:var(--b);color:var(--y);"><span class="n">1</span><span class="l">Module
+        <div class="stat" style="background:var(--b);color:var(--y);"><span class="n">2</span><span class="l">Modules
             Completed</span></div>
         <div class="stat" style="background:var(--y);color:var(--b);border:2px solid rgba(0,0,0,.1);"><span
             class="n">🥉</span><span class="l">National Level Prize</span></div>
@@ -156,6 +156,7 @@
     <div class="mods-grid">
 
 
+      <!-- MODULE 01 — Web Development ✅ -->
       <div class="mod-card reveal" onclick="openPanel('p-webdev')">
         <div class="mod-card-top">
           <div class="mc-n">01</div>
@@ -166,10 +167,21 @@
         <div class="mod-card-bottom"><span class="mc-tag">✅ Completed</span><span class="mod-arrow">↗</span></div>
       </div>
 
-
-      <div class="mod-card reveal" style="opacity:.45;cursor:not-allowed;">
+      <!-- MODULE 02 — UI/UX Design ✅ -->
+      <div class="mod-card reveal" onclick="openPanel('p-uiux')" style="cursor:pointer;">
         <div class="mod-card-top">
           <div class="mc-n">02</div>
+          <h3 class="mc-t">🎨 UI/UX Design</h3>
+          <p class="mc-d">User Interface and User Experience design principles — wireframing, prototyping, design
+            systems, Figma, accessibility, and creating delightful digital products.</p>
+        </div>
+        <div class="mod-card-bottom"><span class="mc-tag" style="background:var(--o);color:#fff;">✅ Completed</span><span class="mod-arrow">↗</span></div>
+      </div>
+
+      <!-- MODULE 03 onwards — Locked -->
+      <div class="mod-card reveal" style="opacity:.45;cursor:not-allowed;">
+        <div class="mod-card-top">
+          <div class="mc-n">03</div>
           <h3 class="mc-t">📐 CAD</h3>
           <p class="mc-d">Computer Aided Design using industry-standard tools. Learn parametric modeling, 2D drafting,
             and 3D part assemblies for engineering and product design.</p>
@@ -177,10 +189,9 @@
         <div class="mod-card-bottom"><span class="mc-tag locked">🔒 Upcoming</span></div>
       </div>
 
-
       <div class="mod-card reveal" style="opacity:.45;cursor:not-allowed;">
         <div class="mod-card-top">
-          <div class="mc-n">03</div>
+          <div class="mc-n">04</div>
           <h3 class="mc-t">🔗 Networking</h3>
           <p class="mc-d">Understand how data travels across the internet. Covers TCP/IP, DNS, routing, subnetting, and
             practical hands-on network configuration labs.</p>
@@ -188,10 +199,9 @@
         <div class="mod-card-bottom"><span class="mc-tag locked">🔒 Upcoming</span></div>
       </div>
 
-
       <div class="mod-card reveal" style="opacity:.45;cursor:not-allowed;">
         <div class="mod-card-top">
-          <div class="mc-n">04</div>
+          <div class="mc-n">05</div>
           <h3 class="mc-t">🖨️ 3D Printing</h3>
           <p class="mc-d">From design to physical object — master FDM and SLA printing techniques, slicer software,
             material selection, and post-processing workflows.</p>
@@ -199,10 +209,9 @@
         <div class="mod-card-bottom"><span class="mc-tag locked">🔒 Upcoming</span></div>
       </div>
 
-
       <div class="mod-card reveal" style="opacity:.45;cursor:not-allowed;">
         <div class="mod-card-top">
-          <div class="mc-n">05</div>
+          <div class="mc-n">06</div>
           <h3 class="mc-t">⚡ Laser Cutting</h3>
           <p class="mc-d">Precision digital fabrication using CO2 and fiber laser cutters. Learn vector design, material
             settings, engraving techniques, and safety protocols.</p>
@@ -210,10 +219,9 @@
         <div class="mod-card-bottom"><span class="mc-tag locked">🔒 Upcoming</span></div>
       </div>
 
-
       <div class="mod-card reveal" style="opacity:.45;cursor:not-allowed;">
         <div class="mod-card-top">
-          <div class="mc-n">06</div>
+          <div class="mc-n">07</div>
           <h3 class="mc-t">☕ Java Programming</h3>
           <p class="mc-d">Object-oriented programming from the ground up. Variables, loops, classes, inheritance,
             exceptions, and building your first console applications in Java.</p>
@@ -221,10 +229,9 @@
         <div class="mod-card-bottom"><span class="mc-tag locked">🔒 Upcoming</span></div>
       </div>
 
-
       <div class="mod-card reveal" style="opacity:.45;cursor:not-allowed;">
         <div class="mod-card-top">
-          <div class="mc-n">07</div>
+          <div class="mc-n">08</div>
           <h3 class="mc-t">🤖 AI &amp; ML</h3>
           <p class="mc-d">Foundations of artificial intelligence and machine learning. Covers supervised learning,
             neural networks, model training, and practical Python ML projects.</p>
@@ -232,10 +239,9 @@
         <div class="mod-card-bottom"><span class="mc-tag locked">🔒 Upcoming</span></div>
       </div>
 
-
       <div class="mod-card reveal" style="opacity:.45;cursor:not-allowed;">
         <div class="mod-card-top">
-          <div class="mc-n">08</div>
+          <div class="mc-n">09</div>
           <h3 class="mc-t">🔌 PCB &amp; IoT</h3>
           <p class="mc-d">Design custom printed circuit boards and build connected devices. Schematic capture, PCB
             layout, soldering, and Arduino/ESP32 programming for IoT applications.</p>
@@ -243,24 +249,12 @@
         <div class="mod-card-bottom"><span class="mc-tag locked">🔒 Upcoming</span></div>
       </div>
 
-
-      <div class="mod-card reveal" style="opacity:.45;cursor:not-allowed;">
-        <div class="mod-card-top">
-          <div class="mc-n">09</div>
-          <h3 class="mc-t">📡 IoT Systems</h3>
-          <p class="mc-d">Internet of Things — sensors, actuators, microcontrollers, wireless protocols (Wi-Fi,
-            Bluetooth, MQTT), and real-world connected system projects.</p>
-        </div>
-        <div class="mod-card-bottom"><span class="mc-tag locked">🔒 Upcoming</span></div>
-      </div>
-
-
       <div class="mod-card reveal" style="opacity:.45;cursor:not-allowed;">
         <div class="mod-card-top">
           <div class="mc-n">10</div>
-          <h3 class="mc-t">🎨 UI/UX Design</h3>
-          <p class="mc-d">User Interface and User Experience design principles — wireframing, prototyping, design
-            systems, Figma, accessibility, and creating delightful digital products.</p>
+          <h3 class="mc-t">📡 IoT Systems</h3>
+          <p class="mc-d">Internet of Things — sensors, actuators, microcontrollers, wireless protocols (Wi-Fi,
+            Bluetooth, MQTT), and real-world connected system projects.</p>
         </div>
         <div class="mod-card-bottom"><span class="mc-tag locked">🔒 Upcoming</span></div>
       </div>
@@ -856,6 +850,207 @@
   </div>
 
 
+
+  <!-- ===================== UI/UX MODULE PANEL ===================== -->
+  <div class="overlay" id="p-uiux">
+    <div class="overlay-bg" onclick="closePanel('p-uiux')"></div>
+    <div class="panel">
+      <div class="panel-header">
+        <button class="panel-back" onclick="closePanel('p-uiux')">← Back to FabLab Modules</button>
+        <button class="panel-close" onclick="closePanel('p-uiux')">✕</button>
+      </div>
+      <div class="panel-body">
+        <div class="p-eyebrow">Module 02 · 7 Days · Figma · UI · UX</div>
+        <h2 class="p-title">UI/UX<br><em>Design</em></h2>
+        <p class="p-sub">FabLab SSGMCE — ✅ Completed</p>
+
+        <div style="background:var(--o);color:#fff;padding:14px 18px;margin:18px 0;border:2px solid #000;font-size:.82rem;line-height:1.65;">
+          <strong>📌 Mentor's Instruction:</strong> Document each day's learning with topics covered, tools used, and screenshots or links to your Figma work. Final project must include a complete prototype with your design rationale.
+        </div>
+
+        <div class="p-divider"></div>
+
+        <div class="p-divider"></div>
+        <div class="days-nav">
+          <button class="day-btn active" onclick="switchDay(this,'ux-d1')">Day 1</button>
+          <button class="day-btn" onclick="switchDay(this,'ux-d2')">Day 2</button>
+          <button class="day-btn" onclick="switchDay(this,'ux-d3')">Day 3</button>
+          <button class="day-btn" onclick="switchDay(this,'ux-d4')">Day 4</button>
+          <button class="day-btn" onclick="switchDay(this,'ux-d5')">Day 5</button>
+          <button class="day-btn" onclick="switchDay(this,'ux-d6')">Day 6</button>
+          <button class="day-btn" onclick="switchDay(this,'ux-d7')">Day 7</button>
+        </div>
+
+
+        <div class="day-content active" id="ux-d1">
+          <div class="day-thumb" style="font-size:1rem;justify-content:flex-start;padding:0 20px;gap:10px;">
+            <span>🎨</span><span>Day 01 — Introduction to UI/UX &amp; Design Thinking</span></div>
+          <h3 class="day-h">Day 01 — Introduction to UI/UX &amp; Design Thinking</h3>
+          <p class="day-p">Getting started with design — understanding the difference between UI (User Interface) and UX (User Experience) and how they work together to shape digital products. Explored the Design Thinking process and studied real-world examples of good vs bad UX. Set up Figma and navigated the workspace for the first time.</p>
+          <p class="topics-label">Topics Covered</p>
+          <ul class="topics-list">
+            <li>What is UI vs UX — key differences and how they complement each other</li>
+            <li>Design Thinking: Empathise → Define → Ideate → Prototype → Test</li>
+            <li>User-centred design principles</li>
+            <li>Good UX vs Bad UX — real app case studies (YouTube, Swiggy, GPay)</li>
+            <li>Introduction to Figma — interface overview, frames, layers panel</li>
+            <li>Creating a Figma account and setting up your first project file</li>
+          </ul>
+          <p class="topics-label" style="margin-top:16px;">My Work — Day 01</p>
+          <p style="font-size:.84rem;line-height:1.65;opacity:.65;margin-bottom:12px;">Set up Figma account and explored the workspace. Created a basic frame, added text layers and shapes. Analysed 3 popular apps for UX strengths and weaknesses as a design thinking exercise.</p>
+          <div class="assign-note">📌 Mentor's Note: Document your Figma setup and UX analysis for Day 1.</div>
+          <a href="https://www.figma.com/design/1ntkpZaH8wrP6LqRRpNMQL/fablab-2rb?node-id=29-2&p=f&t=wqd4AhSkKuw0UFYy-0" target="_blank" class="assign-link"><span class="ai">🎨</span><span>Day 1 Work — View in Figma</span><span class="ah">Open Figma ↗</span></a>
+        </div>
+
+
+        <div class="day-content" id="ux-d2">
+          <div class="day-thumb" style="font-size:1rem;justify-content:flex-start;padding:0 20px;gap:10px;">
+            <span>🖋️</span><span>Day 02 — Figma Basics: Shapes, Text &amp; Components</span></div>
+          <h3 class="day-h">Day 02 — Figma Basics: Shapes, Text &amp; Components</h3>
+          <p class="day-p">Deep dive into Figma's core design tools — drawing and styling shapes, working with typography, and building reusable UI components using Auto Layout. Learned how a design system is built from small, consistent pieces that scale across an entire product.</p>
+          <p class="topics-label">Topics Covered</p>
+          <ul class="topics-list">
+            <li>Figma toolbar — Rectangle, Ellipse, Line, Pen tool, Vector networks</li>
+            <li>Typography — font families, size, weight, line height, letter spacing</li>
+            <li>Fill, Stroke, Corner Radius, Drop Shadow, Blur effects</li>
+            <li>Auto Layout — padding, gap, direction, hugging vs filling</li>
+            <li>Creating Components and using Instances across frames</li>
+            <li>Organising layers with Frames and Groups</li>
+            <li>Using Figma Community resources and plugins</li>
+          </ul>
+          <p class="topics-label" style="margin-top:16px;">My Work — Day 02</p>
+          <p style="font-size:.84rem;line-height:1.65;opacity:.65;margin-bottom:12px;">Built a basic UI component kit in Figma — buttons (primary, secondary, disabled states), input fields with labels, and a product card. All components used Auto Layout and were saved as reusable Figma components.</p>
+          <div class="assign-note">📌 Mentor's Note: Build and document your Figma component library for Day 2.</div>
+          <a href="https://www.figma.com/design/1ntkpZaH8wrP6LqRRpNMQL/fablab-2rb?node-id=29-2&p=f&t=wqd4AhSkKuw0UFYy-0" target="_blank" class="assign-link"><span class="ai">🎨</span><span>Day 2 Work — Component Kit in Figma</span><span class="ah">Open Figma ↗</span></a>
+        </div>
+
+
+        <div class="day-content" id="ux-d3">
+          <div class="day-thumb" style="font-size:1rem;justify-content:flex-start;padding:0 20px;gap:10px;">
+            <span>📐</span><span>Day 03 — Wireframing &amp; Layout Grids</span></div>
+          <h3 class="day-h">Day 03 — Wireframing &amp; Layout Grids</h3>
+          <p class="day-p">Wireframing is the blueprint stage of design — planning layout and information structure before adding any visuals or colour. Learned about grid systems and spacing rules that keep designs consistent, and practised wireframing mobile screens for an energy drink app concept.</p>
+          <p class="topics-label">Topics Covered</p>
+          <ul class="topics-list">
+            <li>What is wireframing — lo-fi sketches vs hi-fi mockups</li>
+            <li>Figma Layout Grids — columns, rows, gutters, margins</li>
+            <li>8px grid system — spacing and sizing for consistency</li>
+            <li>Visual hierarchy — using size, weight, colour and spacing to guide the eye</li>
+            <li>Wireframing a mobile screen step by step in Figma</li>
+            <li>Common UI patterns — hero section, card grid, nav bar, tab bar</li>
+          </ul>
+          <p class="topics-label" style="margin-top:16px;">My Work — Day 03</p>
+          <p style="font-size:.84rem;line-height:1.65;opacity:.65;margin-bottom:12px;">Wireframed 3 mobile screens for the Red Bull energy drink app concept — Home screen, Product Detail screen, and a Cart screen. Used column grids with gutters and followed the 8px spacing system throughout all layouts.</p>
+          <div class="assign-note">📌 Mentor's Note: Include wireframe frames with grid overlays visible in your Figma file.</div>
+          <a href="https://www.figma.com/design/1ntkpZaH8wrP6LqRRpNMQL/fablab-2rb?node-id=29-2&p=f&t=wqd4AhSkKuw0UFYy-0" target="_blank" class="assign-link"><span class="ai">🎨</span><span>Day 3 Work — Wireframes in Figma</span><span class="ah">Open Figma ↗</span></a>
+        </div>
+
+
+        <div class="day-content" id="ux-d4">
+          <div class="day-thumb" style="font-size:1rem;justify-content:flex-start;padding:0 20px;gap:10px;">
+            <span>🌈</span><span>Day 04 — Colour Theory &amp; Typography in UI</span></div>
+          <h3 class="day-h">Day 04 — Colour Theory &amp; Typography in UI Design</h3>
+          <p class="day-p">Colour and typography are the two most powerful visual tools in UI design — they define brand identity, guide emotions, and create hierarchy. Applied Red Bull's official brand palette and typography system to build a full style guide in Figma, ready to use across all project screens.</p>
+          <p class="topics-label">Topics Covered</p>
+          <ul class="topics-list">
+            <li>Colour theory basics — hue, saturation, lightness, temperature</li>
+            <li>UI colour roles — primary, secondary, accent, background, surface, error</li>
+            <li>Creating a colour palette in Figma using Styles and Variables</li>
+            <li>Contrast and accessibility — WCAG AA minimum 4.5:1 ratio</li>
+            <li>Red Bull brand colours — Red #E8001D · Yellow #FFC906 · Black #000</li>
+            <li>Typography pairing — Display / Heading / Body / Caption roles</li>
+            <li>Applying brand guidelines consistently across UI screens</li>
+          </ul>
+          <p class="topics-label" style="margin-top:16px;">My Work — Day 04</p>
+          <p style="font-size:.84rem;line-height:1.65;opacity:.65;margin-bottom:12px;">Created a full colour and typography style guide for the Red Bull project in Figma. Defined primary red, accent yellow, dark background, and surface colours as Figma Styles. Paired a bold display font with a clean body typeface matching Red Bull's visual identity.</p>
+          <div class="assign-note">📌 Mentor's Note: Your Figma file must include a dedicated Style Guide page with colour swatches and type scale.</div>
+          <a href="https://www.figma.com/design/1ntkpZaH8wrP6LqRRpNMQL/fablab-2rb?node-id=29-2&p=f&t=wqd4AhSkKuw0UFYy-0" target="_blank" class="assign-link"><span class="ai">🎨</span><span>Day 4 Work — Style Guide in Figma</span><span class="ah">Open Figma ↗</span></a>
+        </div>
+
+
+        <div class="day-content" id="ux-d5">
+          <div class="day-thumb" style="font-size:1rem;justify-content:flex-start;padding:0 20px;gap:10px;">
+            <span>⚡</span><span>Day 05 — High-Fidelity Design: Red Bull Screens</span></div>
+          <h3 class="day-h">Day 05 — High-Fidelity Design: Red Bull App Screens</h3>
+          <p class="day-p">Moved from lo-fi wireframes to full high-fidelity UI — designing polished, brand-accurate screens for the Red Bull app project. Applied the style guide from Day 4, added real imagery and refined every detail to create screens that look and feel like a real product ready for development.</p>
+          <p class="topics-label">Topics Covered</p>
+          <ul class="topics-list">
+            <li>Hi-fi design workflow — taking wireframes to production-ready screens</li>
+            <li>Working with images in Figma — fills, masks, image overlays</li>
+            <li>Designing a hero section with bold Red Bull typography and imagery</li>
+            <li>Product card design — price tag, product image, CTA button</li>
+            <li>Navigation bar with icons and active/inactive states</li>
+            <li>Applying shadows and gradients to create visual depth</li>
+            <li>Using shared components for consistency across all screens</li>
+          </ul>
+          <p class="topics-label" style="margin-top:16px;">My Work — Day 05</p>
+          <p style="font-size:.84rem;line-height:1.65;opacity:.65;margin-bottom:12px;">Designed the Home, Products Catalogue, and About screens for the Red Bull app in full hi-fi. Used official Red Bull imagery, the bold red/yellow brand palette, strong typographic hierarchy, and consistent spacing from the style guide.</p>
+          <div class="assign-note">📌 Mentor's Note: All hi-fi screens must use the defined Figma Styles and Components from Days 2 &amp; 4.</div>
+          <a href="https://www.figma.com/design/1ntkpZaH8wrP6LqRRpNMQL/fablab-2rb?node-id=29-2&p=f&t=wqd4AhSkKuw0UFYy-0" target="_blank" class="assign-link"><span class="ai">🎨</span><span>Day 5 Work — Hi-Fi Screens in Figma</span><span class="ah">Open Figma ↗</span></a>
+        </div>
+
+
+        <div class="day-content" id="ux-d6">
+          <div class="day-thumb" style="font-size:1rem;justify-content:flex-start;padding:0 20px;gap:10px;">
+            <span>🔗</span><span>Day 06 — Prototyping &amp; Interactions in Figma</span></div>
+          <h3 class="day-h">Day 06 — Prototyping &amp; Interactions in Figma</h3>
+          <p class="day-p">A static mockup shows what a design looks like — a prototype shows how it works. Learned how to connect all the Red Bull app screens into a clickable, interactive flow using Figma's Prototype mode, adding transitions and interactions to simulate the real app experience.</p>
+          <p class="topics-label">Topics Covered</p>
+          <ul class="topics-list">
+            <li>Figma Prototype mode — connections, triggers, and action types</li>
+            <li>Navigate to Frame, Back, Overlay interactions</li>
+            <li>Transition types — Instant, Dissolve, Smart Animate, Slide In/Out</li>
+            <li>Full prototype flow — Home → Products → Product Detail → Cart</li>
+            <li>Scrollable frames for long catalogue and content pages</li>
+            <li>Sharing a prototype link for review and feedback</li>
+            <li>Previewing the prototype on mobile using Figma Mirror</li>
+          </ul>
+          <p class="topics-label" style="margin-top:16px;">My Work — Day 06</p>
+          <p style="font-size:.84rem;line-height:1.65;opacity:.65;margin-bottom:12px;">Connected all Red Bull app screens into a fully working clickable prototype. Added Smart Animate transitions between screens, made the product catalogue page scrollable, and previewed the complete flow on mobile using Figma Mirror.</p>
+          <div class="assign-note">📌 Mentor's Note: Share your prototype link and confirm all screen connections work correctly before Day 7.</div>
+          <a href="https://www.figma.com/design/1ntkpZaH8wrP6LqRRpNMQL/fablab-2rb?node-id=29-2&p=f&t=wqd4AhSkKuw0UFYy-0" target="_blank" class="assign-link"><span class="ai">🔗</span><span>Day 6 Work — Clickable Prototype in Figma</span><span class="ah">Open Figma ↗</span></a>
+        </div>
+
+
+        <div class="day-content" id="ux-d7">
+          <div class="day-thumb" style="font-size:1rem;justify-content:flex-start;padding:0 20px;gap:10px;">
+            <span>🏁</span><span>Day 07 — Final Project: Red Bull App Prototype</span></div>
+          <h3 class="day-h">Day 07 — Final Project: Red Bull App Prototype</h3>
+          <p class="day-p">The final project of the UI/UX Design module — a complete, polished Red Bull mobile app design built entirely in Figma. The project brings together everything from all 7 days: design thinking, Figma basics, wireframing, colour theory, hi-fi screens, and prototyping — delivered as a working clickable prototype and a recorded walkthrough video.</p>
+          <p class="topics-label">What's in the Final Project</p>
+          <ul class="topics-list">
+            <li>Complete mobile app — 7+ hi-fi screens with full Red Bull brand identity</li>
+            <li>Splash screen, Home, Products Catalogue, Product Detail, Cart, About</li>
+            <li>Reusable Figma component library — buttons, cards, nav bar, tags</li>
+            <li>Fully clickable prototype with Smart Animate transitions throughout</li>
+            <li>Colour &amp; typography style guide page in Figma</li>
+            <li>Scrollable frames for long-content pages</li>
+            <li>Prototype walkthrough recorded and published on YouTube</li>
+          </ul>
+          <p class="topics-label" style="margin-top:16px;">Final Project Submission</p>
+          <p style="font-size:.84rem;line-height:1.65;opacity:.65;margin-bottom:16px;">Red Bull mobile app UI/UX project — fully designed and prototyped in Figma, walkthrough video published on YouTube. Both links are live below.</p>
+          <div class="assign-note">📌 Mentor's Note: Submit both the Figma file link and the YouTube walkthrough video link as your final project deliverable.</div>
+
+          <!-- YouTube embed -->
+          <p style="font-size:.78rem;font-weight:700;opacity:.5;margin:18px 0 8px;text-transform:uppercase;letter-spacing:.07em;">▶ Prototype Walkthrough Video</p>
+          <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;border:2px solid var(--o);margin-bottom:16px;">
+            <iframe src="https://www.youtube.com/embed/qVUjiAxKbW8" title="Red Bull UI/UX Prototype Walkthrough" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+
+          <!-- Figma embed -->
+          <p style="font-size:.78rem;font-weight:700;opacity:.5;margin:0 0 8px;text-transform:uppercase;letter-spacing:.07em;">🎨 Figma Design File</p>
+          <div style="position:relative;padding-bottom:60%;height:0;overflow:hidden;border-radius:8px;border:2px solid #000;margin-bottom:16px;">
+            <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F1ntkpZaH8wrP6LqRRpNMQL%2Ffablab-2rb%3Fnode-id%3D29-2%26p%3Df%26t%3Dwqd4AhSkKuw0UFYy-0" allowfullscreen></iframe>
+          </div>
+
+          <a href="https://youtu.be/qVUjiAxKbW8?si=yb_VPRcXtXj_M6Ez" target="_blank" class="assign-link"><span class="ai">▶️</span><span>Watch Walkthrough on YouTube</span><span class="ah">Play Video ↗</span></a>
+          <a href="https://www.figma.com/design/1ntkpZaH8wrP6LqRRpNMQL/fablab-2rb?node-id=29-2&p=f&t=wqd4AhSkKuw0UFYy-0" target="_blank" class="assign-link" style="margin-top:8px;"><span class="ai">🎨</span><span>View Final Figma Design File</span><span class="ah">Open Figma ↗</span></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- ============================================================= -->
 
   <button class="resume-fab" onclick="openResume()">
     <span class="rf-icon">📄</span>
