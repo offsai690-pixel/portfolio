@@ -1250,6 +1250,39 @@ footer a:hover {
     margin-left: auto;
 }
 
+.code-block {
+    background: var(--b);
+    color: #baffc9;
+    font-family: 'Courier New', Consolas, monospace;
+    font-size: .78rem;
+    line-height: 1.6;
+    padding: 16px 18px;
+    overflow-x: auto;
+    margin-bottom: 12px;
+    border: 2px solid var(--b);
+    white-space: pre;
+}
+
+.code-label {
+    font-size: .68rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    opacity: .4;
+    margin-bottom: 6px;
+}
+
+.code-out {
+    background: #fffbdc;
+    border: 1.5px solid #d4a800;
+    padding: 10px 14px;
+    font-family: 'Courier New', Consolas, monospace;
+    font-size: .78rem;
+    color: #5c4200;
+    margin-bottom: 16px;
+    white-space: pre-wrap;
+}
+
 .work-hero {
     width: 100%;
     aspect-ratio: 16/9;

@@ -92,7 +92,7 @@
       <div class="stats-grid reveal">
         <div class="stat" style="background:var(--o);color:var(--w);"><span class="n">1st</span><span class="l">Year
             Mech. Engg.</span></div>
-        <div class="stat" style="background:var(--b);color:var(--y);"><span class="n">3</span><span class="l">Modules
+        <div class="stat" style="background:var(--b);color:var(--y);"><span class="n">5</span><span class="l">Modules
 
             Completed</span></div>
         <div class="stat" style="background:var(--y);color:var(--b);border:2px solid rgba(0,0,0,.1);"><span
@@ -190,14 +190,14 @@
         <div class="mod-card-bottom"><span class="mc-tag" style="background:var(--o);color:#fff;">✅ Completed</span><span class="mod-arrow">↗</span></div>
       </div>
 
-      <div class="mod-card reveal" style="opacity:.45;cursor:not-allowed;">
+      <div class="mod-card reveal" onclick="openPanel('p-network')" style="cursor:pointer;">
         <div class="mod-card-top">
           <div class="mc-n">04</div>
           <h3 class="mc-t">🔗 Networking</h3>
-          <p class="mc-d">Understand how data travels across the internet. Covers TCP/IP, DNS, routing, subnetting, and
-            practical hands-on network configuration labs.</p>
+          <p class="mc-d">Understand how data travels across the internet — data communication, network types,
+            topologies, the OSI model, core protocols, and real-time communication.</p>
         </div>
-        <div class="mod-card-bottom"><span class="mc-tag locked">🔒 Upcoming</span></div>
+        <div class="mod-card-bottom"><span class="mc-tag">✅ Completed</span><span class="mod-arrow">↗</span></div>
       </div>
 
       <div class="mod-card reveal" style="opacity:.45;cursor:not-allowed;">
@@ -220,14 +220,14 @@
         <div class="mod-card-bottom"><span class="mc-tag locked">🔒 Upcoming</span></div>
       </div>
 
-      <div class="mod-card reveal" style="opacity:.45;cursor:not-allowed;">
+      <div class="mod-card reveal" onclick="openPanel('p-java')" style="cursor:pointer;">
         <div class="mod-card-top">
           <div class="mc-n">07</div>
           <h3 class="mc-t">☕ Java Programming</h3>
-          <p class="mc-d">Object-oriented programming from the ground up. Variables, loops, classes, inheritance,
-            exceptions, and building your first console applications in Java.</p>
+          <p class="mc-d">Object-oriented programming from the ground up — syntax, variables, operators, conditionals,
+            methods, arrays, and all 4 pillars of OOP, ending in a full Pac-Man game built with Java Swing.</p>
         </div>
-        <div class="mod-card-bottom"><span class="mc-tag locked">🔒 Upcoming</span></div>
+        <div class="mod-card-bottom"><span class="mc-tag" style="background:var(--o);color:#fff;">✅ Completed</span><span class="mod-arrow">↗</span></div>
       </div>
 
       <div class="mod-card reveal" style="opacity:.45;cursor:not-allowed;">
@@ -319,18 +319,6 @@
         <h3 class="ach-t">3rd Prize — National Level Project Expo</h3>
         <p class="ach-d">Awarded 3rd prize at the National Level Mechanical Mecathon at VB Kolte College, Malkapur.
           Competed against engineering teams from across the country.</p>
-      </div>
-      <div class="ach-card reveal">
-        <span class="ach-medal">✅</span>
-        <h3 class="ach-t">FabLab Web Dev Module Certified</h3>
-        <p class="ach-d">Successfully completed Module 01 — Web Development at FabLab SSGMCE, certified in HTML, CSS and
-          JavaScript.</p>
-      </div>
-      <div class="ach-card reveal">
-        <span class="ach-medal">🏭</span>
-        <h3 class="ach-t">FabLab Certified Maker</h3>
-        <p class="ach-d">Enrolled and actively contributing to FabLab SSGMCE Shegaon — learning digital fabrication and
-          modern making skills.</p>
       </div>
     </div>
   </section>
@@ -1201,6 +1189,624 @@
       </div>
     </div>
   </div>
+
+  <div class="overlay" id="p-java">
+    <div class="overlay-bg" onclick="closePanel('p-java')"></div>
+    <div class="panel">
+      <div class="panel-header">
+        <button class="panel-back" onclick="closePanel('p-java')">← Back to FabLab Modules</button>
+        <button class="panel-close" onclick="closePanel('p-java')">✕</button>
+      </div>
+      <div class="panel-body">
+        <div class="p-eyebrow">Module 07 · 7 Days · Java · OOP</div>
+        <h2 class="p-title">Java<br><em>Programming</em></h2>
+        <p class="p-sub">FabLab SSGMCE — ✅ Completed &nbsp;·&nbsp; 7-Day Learning Plan</p>
+
+        <div style="background:var(--o);color:#fff;padding:14px 18px;margin:18px 0;border:2px solid #000;font-size:.82rem;line-height:1.65;">
+          <strong>📌 Proof of Work:</strong> Each day below includes the actual Java code written and run in VS Code
+          during that day's session, along with the console output. Day 7 is the final project — a complete Pac-Man
+          game built with Java Swing/AWT.
+        </div>
+
+        <div class="p-divider"></div>
+        <div class="days-nav">
+          <button class="day-btn active" onclick="switchDay(this,'jv-d1')">Day 1</button>
+          <button class="day-btn" onclick="switchDay(this,'jv-d2')">Day 2</button>
+          <button class="day-btn" onclick="switchDay(this,'jv-d3')">Day 3</button>
+          <button class="day-btn" onclick="switchDay(this,'jv-d4')">Day 4</button>
+          <button class="day-btn" onclick="switchDay(this,'jv-d5')">Day 5</button>
+          <button class="day-btn" onclick="switchDay(this,'jv-d6')">Day 6</button>
+          <button class="day-btn" onclick="switchDay(this,'jv-d7')">Day 7</button>
+        </div>
+
+        <!-- DAY 1 -->
+        <div class="day-content active" id="jv-d1">
+          <div class="day-thumb" style="font-size:1rem;justify-content:flex-start;padding:0 20px;gap:10px;">
+            <span>☕</span><span>Day 01 — Introduction &amp; Java Basics</span></div>
+          <h3 class="day-h">Day 01 — Introduction &amp; Java Basics</h3>
+          <p class="day-p">Started with what programming actually is, then moved into Java specifically — who built it,
+            where it's used (mobile, web backend, enterprise systems, desktop software), and Java's core promise of
+            WORA (Write Once, Run Anywhere) through the JDK → Compiler → Bytecode → JVM pipeline. Wrote and ran my
+            first Java program.</p>
+          <p class="topics-label">Topics Covered</p>
+          <ul class="topics-list">
+            <li>What is programming — instructions, programs, real-world examples</li>
+            <li>What is Java &amp; where it's used — mobile, web backend, enterprise, desktop</li>
+            <li>JDK vs JVM — how Java code compiles to bytecode and runs anywhere</li>
+            <li>Java program structure — class, public static void main(String[] args)</li>
+            <li>print() vs println() — syntax essentials: curly braces, semicolons, comments</li>
+          </ul>
+          <p class="topics-label" style="margin-top:16px;">My Work — Day 01</p>
+          <div class="code-label">Hello.java</div>
+          <div class="code-block">public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello Java");
+        System.out.print("Fablab ");
+        System.out.println("ki Jai");
+    }
+}</div>
+          <div class="code-out">Hello Java
+Fablab ki Jai</div>
+          <div class="assign-note">📌 Homework: printed my name, college, department and city, a multi-line
+            "Welcome to Java Programming" message, and a 5-row star pattern using println().</div>
+        </div>
+
+        <!-- DAY 2 -->
+        <div class="day-content" id="jv-d2">
+          <div class="day-thumb" style="font-size:1rem;justify-content:flex-start;padding:0 20px;gap:10px;">
+            <span>🔢</span><span>Day 02 — Variables, Data Types, Input &amp; Operators</span></div>
+          <h3 class="day-h">Day 02 — Variables, Data Types, Input &amp; Operators</h3>
+          <p class="day-p">Learned how Java stores data using variables — declaration vs initialization, naming
+            rules, and case-sensitivity. Used the Scanner class to take keyboard input, and applied arithmetic
+            operators to build small calculation programs.</p>
+          <p class="topics-label">Topics Covered</p>
+          <ul class="topics-list">
+            <li>Variables — declaration, initialization, data type + name + value</li>
+            <li>Naming rules — no leading digits, no spaces, no keywords, case-sensitive</li>
+            <li>Scanner class — nextInt(), next(), nextLine() for keyboard input</li>
+            <li>Arithmetic operators — addition, subtraction, multiplication, division, modulo</li>
+          </ul>
+          <p class="topics-label" style="margin-top:16px;">My Work — Day 02</p>
+          <div class="code-label">AgeInput.java</div>
+          <div class="code-block">import java.util.Scanner;
+
+public class AgeInput {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter your age: ");
+        int age = input.nextInt();
+        System.out.println("Your age is " + age);
+    }
+}</div>
+          <div class="code-out">Enter your age: 20
+Your age is 20</div>
+          <div class="assign-note">📌 Homework: area of a rectangle, average of three numbers, area of a circle,
+            simple interest calculator, Celsius→Fahrenheit conversion, and a GST calculator — all using Scanner
+            input and arithmetic operators.</div>
+        </div>
+
+        <!-- DAY 3 -->
+        <div class="day-content" id="jv-d3">
+          <div class="day-thumb" style="font-size:1rem;justify-content:flex-start;padding:0 20px;gap:10px;">
+            <span>⚙️</span><span>Day 03 — Operators &amp; Conditional Statements</span></div>
+          <h3 class="day-h">Day 03 — Operators &amp; Conditional Statements</h3>
+          <p class="day-p">Went deeper into every operator category — relational, logical, assignment, unary, and
+            bitwise — then moved into decision-making with if / else / else-if ladders, nested if, and switch
+            statements, tying each one to a real-life scenario.</p>
+          <p class="topics-label">Topics Covered</p>
+          <ul class="topics-list">
+            <li>Relational (==, !=, &gt;, &lt;), Logical (&amp;&amp;, ||, !), Assignment (+=, -=), Unary (++, --),
+              Bitwise (&amp;, |, ^)</li>
+            <li>if statement, if-else, if-else-if ladder</li>
+            <li>Nested if statements</li>
+            <li>switch statement with break</li>
+          </ul>
+          <p class="topics-label" style="margin-top:16px;">My Work — Day 03</p>
+          <div class="code-label">GradeDemo.java</div>
+          <div class="code-block">public class GradeDemo {
+    public static void main(String[] args) {
+        int score = 82;
+        if (score >= 90) {
+            System.out.println("Grade A");
+        } else if (score >= 75) {
+            System.out.println("Grade B");
+        } else {
+            System.out.println("Grade C");
+        }
+    }
+}</div>
+          <div class="code-out">Grade B</div>
+          <div class="code-label">LeapYear.java</div>
+          <div class="code-block">public class LeapYear {
+    public static void main(String[] args) {
+        int year = 2024;
+        if (year % 4 == 0) {
+            System.out.println("Leap Year");
+        } else {
+            System.out.println("Not a Leap Year");
+        }
+    }
+}</div>
+          <div class="code-out">Leap Year</div>
+          <div class="assign-note">📌 Practice: even/odd checker with modulus, and a switch-based day-of-week
+            program.</div>
+        </div>
+
+        <!-- DAY 4 -->
+        <div class="day-content" id="jv-d4">
+          <div class="day-thumb" style="font-size:1rem;justify-content:flex-start;padding:0 20px;gap:10px;">
+            <span>🧩</span><span>Day 04 — OOP Basics: Class, Object &amp; Constructor</span></div>
+          <h3 class="day-h">Day 04 — OOP Basics: Class, Object &amp; Constructor</h3>
+          <p class="day-p">Moved from procedural code into Object-Oriented Programming. Learned that a class is a
+            blueprint (like a house plan) and an object is the real thing built from it — then combined attributes,
+            a method, and a constructor into one working program.</p>
+          <p class="topics-label">Topics Covered</p>
+          <ul class="topics-list">
+            <li>Class — a blueprint/template for objects</li>
+            <li>Attributes — variables that store an object's state</li>
+            <li>Method — a block of code that performs an action</li>
+            <li>Object — a real instance created from a class using new</li>
+            <li>Constructor — runs automatically when an object is created</li>
+          </ul>
+          <p class="topics-label" style="margin-top:16px;">My Work — Day 04</p>
+          <div class="code-label">Main.java — Complete OOP Program</div>
+          <div class="code-block">class Student {
+    // Attributes
+    String name;
+    int age;
+
+    // Constructor
+    Student() {
+        System.out.println("Object Created");
+    }
+
+    // Method
+    void display() {
+        System.out.println("Name : " + name);
+        System.out.println("Age  : " + age);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student();  // Object
+        s1.name = "Rajeshwari";
+        s1.age = 20;
+        s1.display();
+    }
+}</div>
+          <div class="code-out">Object Created
+Name : Rajeshwari
+Age  : 20</div>
+        </div>
+
+        <!-- DAY 5 -->
+        <div class="day-content" id="jv-d5">
+          <div class="day-thumb" style="font-size:1rem;justify-content:flex-start;padding:0 20px;gap:10px;">
+            <span>📚</span><span>Day 05 — Methods &amp; Arrays</span></div>
+          <h3 class="day-h">Day 05 — Methods &amp; Arrays</h3>
+          <p class="day-p">Learned to avoid repeating code by wrapping logic inside reusable methods, with and
+            without parameters and return values. Then learned arrays — storing multiple values under one variable
+            name — and combined the two by passing arrays into methods.</p>
+          <p class="topics-label">Topics Covered</p>
+          <ul class="topics-list">
+            <li>Methods — modifier, return type, name, parameters</li>
+            <li>void methods vs methods that return a value</li>
+            <li>Arrays — declaration, zero-based indexing</li>
+            <li>Traversing arrays — sum, largest element, array.length</li>
+            <li>Passing arrays to methods</li>
+          </ul>
+          <p class="topics-label" style="margin-top:16px;">My Work — Day 05</p>
+          <div class="code-label">ArrayOps.java</div>
+          <div class="code-block">public class ArrayOps {
+    static int sum(int[] arr) {
+        int total = 0;
+        for (int i = 0; i < arr.length; i++) {
+            total += arr[i];
+        }
+        return total;
+    }
+
+    static int largest(int[] arr) {
+        int max = arr[0];
+        for (int num : arr) {
+            if (num > max) max = num;
+        }
+        return max;
+    }
+
+    public static void main(String[] args) {
+        int[] marks = {78, 92, 65, 88, 71};
+        System.out.println("Sum = " + sum(marks));
+        System.out.println("Largest = " + largest(marks));
+    }
+}</div>
+          <div class="code-out">Sum = 394
+Largest = 92</div>
+          <div class="assign-note">📌 Practice: methods for addition, subtraction, square, cube, even/odd check,
+            and finding the largest of two numbers — plus array reverse and search.</div>
+        </div>
+
+        <!-- DAY 6 -->
+        <div class="day-content" id="jv-d6">
+          <div class="day-thumb" style="font-size:1rem;justify-content:flex-start;padding:0 20px;gap:10px;">
+            <span>🎭</span><span>Day 06 — The 4 Pillars of OOP</span></div>
+          <h3 class="day-h">Day 06 — The 4 Pillars of OOP</h3>
+          <p class="day-p">Covered all four pillars of Object-Oriented Programming with a real-life example for
+            each: Encapsulation (ATM — private/public/get/set), Inheritance (Car extends Vehicle — extends/super),
+            Polymorphism (method overloading &amp; overriding), and Abstraction (TV remote — abstract/interface/implements).
+            Finished by combining all four in a single program.</p>
+          <p class="topics-label">Topics Covered</p>
+          <ul class="topics-list">
+            <li>🔒 Encapsulation — private, public, getters &amp; setters</li>
+            <li>👨‍👦 Inheritance — extends, super</li>
+            <li>🔄 Polymorphism — method overloading &amp; overriding</li>
+            <li>🎭 Abstraction — abstract classes, interface, implements</li>
+          </ul>
+          <p class="topics-label" style="margin-top:16px;">My Work — Day 06</p>
+          <div class="code-label">Main.java — All 4 Pillars in One Program</div>
+          <div class="code-block">abstract class Vehicle {                 // Abstraction
+    private String name;                  // Encapsulation
+    public Vehicle(String name) { this.name = name; }
+    public String getName() { return name; }    // Getter
+    abstract void start();                // no body here
+    void start(String mode) {             // Overloading
+        System.out.println(getName() + " starting: " + mode);
+    }
+}
+class Car extends Vehicle {               // Inheritance
+    public Car(String name) { super(name); }
+    void start() {                        // Overriding
+        System.out.println(getName() + " engine started");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Car c = new Car("Tesla");
+        c.start();
+        c.start("Sport");
+    }
+}</div>
+          <div class="code-out">Tesla engine started
+Tesla starting: Sport</div>
+        </div>
+
+        <!-- DAY 7 - FINAL PROJECT -->
+        <div class="day-content" id="jv-d7">
+          <div class="day-thumb" style="font-size:1rem;justify-content:flex-start;padding:0 20px;gap:10px;">
+            <span>🏁</span><span>Day 07 — Final Project: Pac-Man Game</span></div>
+          <h3 class="day-h">Day 07 — Final Project: Pac-Man Game 🎯</h3>
+          <p class="day-p">The final project of the Java module — a fully playable Pac-Man game built with Java's
+            AWT/Swing graphics library, bringing together everything from Days 1–6: classes and objects, methods,
+            arrays/collections, OOP structure, and control flow, plus a real game loop, keyboard input, and
+            collision detection.</p>
+          <p class="topics-label">What the Project Covers</p>
+          <ul class="topics-list">
+            <li>JFrame + JPanel setup and a Timer-driven game loop (20 FPS)</li>
+            <li>Loading a level from a character-based tile map (walls, food, ghosts, Pac-Man)</li>
+            <li>KeyListener for arrow-key movement with wall-collision blocking</li>
+            <li>Random ghost movement with direction changes on wall collision</li>
+            <li>Rectangle-based collision detection (AABB) for food and ghost hits</li>
+            <li>Score tracking, lives, and Game Over / restart logic</li>
+          </ul>
+
+          <p class="topics-label" style="margin-top:16px;">App.java — Entry Point</p>
+          <div class="code-block">public class App {
+    public static void main(String[] args) throws Exception {
+        int rowCount = 21, columnCount = 19, tileSize = 32;
+        int boardWidth = columnCount * tileSize;
+        int boardHeight = rowCount * tileSize;
+
+        JFrame frame = new JFrame("Pac Man");
+        frame.setSize(boardWidth, boardHeight);
+        frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        PacMan pacmanGame = new PacMan();
+        frame.add(pacmanGame);
+        frame.pack();
+        pacmanGame.requestFocus();
+        frame.setVisible(true);
+    }
+}</div>
+
+          <p class="topics-label" style="margin-top:16px;">PacMan.java — Collision Detection (AABB)</p>
+          <div class="code-block">public boolean collision(Block a, Block b) {
+    return  a.x < b.x + b.width &&
+            a.x + a.width > b.x &&
+            a.y < b.y + b.height &&
+            a.y + a.height > b.y;
+}</div>
+
+          <p class="topics-label" style="margin-top:16px;">PacMan.java — Movement &amp; Ghost AI</p>
+          <div class="code-block">public void move() {
+    pacman.x += pacman.velocityX;
+    pacman.y += pacman.velocityY;
+
+    for (Block wall : walls) {
+        if (collision(pacman, wall)) {
+            pacman.x -= pacman.velocityX;
+            pacman.y -= pacman.velocityY;
+            break;
+        }
+    }
+
+    for (Block ghost : ghosts) {
+        if (collision(ghost, pacman)) {
+            lives -= 1;
+            if (lives == 0) { gameOver = true; return; }
+            resetPositions();
+        }
+        ghost.x += ghost.velocityX;
+        ghost.y += ghost.velocityY;
+        for (Block wall : walls) {
+            if (collision(ghost, wall) || ghost.x <= 0 || ghost.x + ghost.width >= boardWidth) {
+                ghost.x -= ghost.velocityX;
+                ghost.y -= ghost.velocityY;
+                ghost.updateDirection(directions[random.nextInt(4)]);
+            }
+        }
+    }
+}</div>
+          <div class="code-out">Controls: Arrow keys move Pac-Man
+Score: +10 per food pellet eaten
+Lives: 3 — game restarts on any key after Game Over</div>
+
+          <div class="assign-note">📌 Homework Extensions (from the project brief): design a custom map by editing
+            the tileMap, add power pellets so Pac-Man can eat the ghosts, fix the screen-wrap bug on the side
+            tunnels, and improve ghost AI to explore unreached areas instead of only turning on wall collision.</div>
+          <a href="https://github.com/offsai690-pixel/Pacman" target="_blank" class="assign-link"><span class="ai">💻</span><span>View Full Source — Pac-Man Game (GitHub)</span><span class="ah">View Repo ↗</span></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="overlay" id="p-network">
+    <div class="overlay-bg" onclick="closePanel('p-network')"></div>
+    <div class="panel">
+      <div class="panel-header">
+        <button class="panel-back" onclick="closePanel('p-network')">← Back to FabLab Modules</button>
+        <button class="panel-close" onclick="closePanel('p-network')">✕</button>
+      </div>
+      <div class="panel-body">
+        <div class="p-eyebrow">Module 04 · 7 Days · Networking</div>
+        <h2 class="p-title">Computer<br><em>Networking</em></h2>
+        <p class="p-sub">FabLab SSGMCE — ✅ Completed &nbsp;·&nbsp; 7-Day Learning Plan</p>
+
+        <div style="background:var(--o);color:#fff;padding:14px 18px;margin:18px 0;border:2px solid #000;font-size:.82rem;line-height:1.65;">
+          <strong>📌 Proof of Work:</strong> Each day below covers the concepts studied that day, with my own notes
+          and short reference examples. Day 7 wraps up with real-time communication and project brainstorming.
+        </div>
+
+        <div class="p-divider"></div>
+        <div class="days-nav">
+          <button class="day-btn active" onclick="switchDay(this,'nw-d1')">Day 1</button>
+          <button class="day-btn" onclick="switchDay(this,'nw-d2')">Day 2</button>
+          <button class="day-btn" onclick="switchDay(this,'nw-d3')">Day 3</button>
+          <button class="day-btn" onclick="switchDay(this,'nw-d4')">Day 4</button>
+          <button class="day-btn" onclick="switchDay(this,'nw-d5')">Day 5</button>
+          <button class="day-btn" onclick="switchDay(this,'nw-d6')">Day 6</button>
+          <button class="day-btn" onclick="switchDay(this,'nw-d7')">Day 7</button>
+        </div>
+
+        <!-- DAY 1 -->
+        <div class="day-content active" id="nw-d1">
+          <div class="day-thumb" style="font-size:1rem;justify-content:flex-start;padding:0 20px;gap:10px;">
+            <span>📡</span><span>Day 01 — Data Communication</span></div>
+          <h3 class="day-h">Day 01 — Data Communication</h3>
+          <p class="day-p">Started with the foundation of all networking — how raw data actually moves between two
+            devices — before touching networks themselves. Covered what makes a data exchange "communication" and
+            what qualities make it reliable.</p>
+          <p class="topics-label">Topics Covered</p>
+          <ul class="topics-list">
+            <li>Meaning and basics of data communication</li>
+            <li>Components of data communication</li>
+            <li>Data transmission</li>
+            <li>Characteristics of data communication</li>
+          </ul>
+          <p class="topics-label" style="margin-top:16px;">My Notes — Day 01</p>
+          <div class="code-label">Components of Data Communication</div>
+          <div class="code-block">1. Message   -> the information to be communicated
+2. Sender    -> device that sends the message
+3. Receiver  -> device that receives the message
+4. Medium    -> physical path (wire, fiber, air) the message travels on
+5. Protocol  -> set of rules governing the communication</div>
+          <p style="font-size:.84rem;line-height:1.65;opacity:.65;margin-bottom:12px;">
+            <strong>Data transmission</strong> can be Simplex (one-way, e.g. keyboard→CPU), Half-Duplex
+            (two-way, one at a time, e.g. walkie-talkie), or Full-Duplex (two-way, simultaneous, e.g. phone
+            call).</p>
+          <p style="font-size:.84rem;line-height:1.65;opacity:.65;margin-bottom:12px;">
+            <strong>Characteristics</strong> that decide the quality of communication: Delivery (data reaches only
+            the intended device), Accuracy (data is delivered unaltered), Timeliness (data arrives without
+            unacceptable delay), and Jitter (variation in packet arrival time).</p>
+        </div>
+
+        <!-- DAY 2 -->
+        <div class="day-content" id="nw-d2">
+          <div class="day-thumb" style="font-size:1rem;justify-content:flex-start;padding:0 20px;gap:10px;">
+            <span>🌐</span><span>Day 02 — Computer Networks</span></div>
+          <h3 class="day-h">Day 02 — Computer Networks</h3>
+          <p class="day-p">Moved from single data communication to full networks — interconnected devices that
+            share data, hardware, and services with each other — and classified networks by the geographic area
+            they cover.</p>
+          <p class="topics-label">Topics Covered</p>
+          <ul class="topics-list">
+            <li>What is a computer network?</li>
+            <li>Need for networking</li>
+            <li>Types of networks</li>
+            <li>PAN, LAN, MAN, WAN</li>
+          </ul>
+          <p class="topics-label" style="margin-top:16px;">My Notes — Day 02</p>
+          <p style="font-size:.84rem;line-height:1.65;opacity:.65;margin-bottom:12px;">
+            A <strong>computer network</strong> is a group of two or more devices linked together to share
+            resources, data and applications.</p>
+          <p style="font-size:.84rem;line-height:1.65;opacity:.65;margin-bottom:12px;">
+            <strong>Need for networking:</strong> resource sharing (printers, files), centralised communication
+            (email, chat), cost reduction, and increased reliability through redundancy.</p>
+          <div class="code-label">Network Types by Coverage Area</div>
+          <div class="code-block">PAN  -> Personal Area Network   -> a few metres     (e.g. Bluetooth, USB)
+LAN  -> Local Area Network     -> one building/campus (e.g. college lab network)
+MAN  -> Metropolitan Area Net. -> a city            (e.g. cable TV network)
+WAN  -> Wide Area Network      -> country/global      (e.g. the Internet)</div>
+        </div>
+
+        <!-- DAY 3 -->
+        <div class="day-content" id="nw-d3">
+          <div class="day-thumb" style="font-size:1rem;justify-content:flex-start;padding:0 20px;gap:10px;">
+            <span>🔀</span><span>Day 03 — Topologies &amp; Networking Devices</span></div>
+          <h3 class="day-h">Day 03 — Topologies &amp; Networking Devices</h3>
+          <p class="day-p">Learned how devices in a network can be physically or logically arranged (topology), and
+            the hardware that actually connects them together and moves traffic between them.</p>
+          <p class="topics-label">Topics Covered</p>
+          <ul class="topics-list">
+            <li>Network topologies</li>
+            <li>Bus, Star, Ring, Mesh, Hybrid</li>
+            <li>Hub, Switch, Router</li>
+          </ul>
+          <p class="topics-label" style="margin-top:16px;">My Notes — Day 03</p>
+          <div class="code-label">Topologies at a Glance</div>
+          <div class="code-block">Bus    -> all devices share one single cable (backbone)
+Star   -> all devices connect to one central hub/switch
+Ring   -> each device connects to exactly two neighbours, forming a loop
+Mesh   -> every device connects directly to every other device
+Hybrid -> a combination of two or more topologies</div>
+          <p style="font-size:.84rem;line-height:1.65;opacity:.65;margin-bottom:12px;">
+            <strong>Hub</strong> — broadcasts incoming data to every connected port (no intelligence).<br>
+            <strong>Switch</strong> — reads MAC addresses and forwards data only to the intended device.<br>
+            <strong>Router</strong> — connects two or more different networks and forwards data based on IP
+            addresses.</p>
+        </div>
+
+        <!-- DAY 4 -->
+        <div class="day-content" id="nw-d4">
+          <div class="day-thumb" style="font-size:1rem;justify-content:flex-start;padding:0 20px;gap:10px;">
+            <span>🧱</span><span>Day 04 — OSI Model &amp; Protocols</span></div>
+          <h3 class="day-h">Day 04 — OSI Model &amp; Protocols</h3>
+          <p class="day-p">Studied the OSI Model — the 7-layer conceptual framework that standardises how network
+            communication is understood and designed — and why protocols (agreed rule-sets) are essential for
+            different devices to actually talk to each other.</p>
+          <p class="topics-label">Topics Covered</p>
+          <ul class="topics-list">
+            <li>Introduction to OSI model</li>
+            <li>Seven layers of OSI</li>
+            <li>Functions of each layer</li>
+            <li>Introduction to network protocols</li>
+            <li>Importance of protocols</li>
+          </ul>
+          <p class="topics-label" style="margin-top:16px;">My Notes — Day 04</p>
+          <div class="code-label">The 7 OSI Layers (top to bottom)</div>
+          <div class="code-block">7. Application  -> interfaces with the end user (HTTP, FTP, SMTP)
+6. Presentation -> data translation, encryption, compression
+5. Session      -> establishes, manages and ends sessions
+4. Transport    -> reliable delivery, segmentation (TCP, UDP)
+3. Network      -> logical addressing and routing (IP)
+2. Data Link    -> physical addressing, error detection (MAC, switches)
+1. Physical     -> raw bit transmission over the medium (cables, signals)</div>
+          <p style="font-size:.84rem;line-height:1.65;opacity:.65;margin-bottom:12px;">
+            A <strong>protocol</strong> is a set of rules that governs how data is formatted, transmitted, and
+            received. Protocols matter because they let devices from different vendors interoperate and give the
+            network a predictable, standardised behaviour.</p>
+        </div>
+
+        <!-- DAY 5 -->
+        <div class="day-content" id="nw-d5">
+          <div class="day-thumb" style="font-size:1rem;justify-content:flex-start;padding:0 20px;gap:10px;">
+            <span>🌍</span><span>Day 05 — HTTP, IP, DHCP &amp; DNS</span></div>
+          <h3 class="day-h">Day 05 — HTTP, IP, DHCP &amp; DNS</h3>
+          <p class="day-p">Covered the everyday protocols that make the web work — HTTP for browsing, IP addresses
+            for identifying devices, DHCP for assigning those addresses automatically, and DNS for turning domain
+            names into IP addresses.</p>
+          <p class="topics-label">Topics Covered</p>
+          <ul class="topics-list">
+            <li>Introduction to HTTP</li>
+            <li>HTTP methods: GET, POST, PUT, DELETE</li>
+            <li>IP addresses</li>
+            <li>IPv4 and IPv6</li>
+            <li>DHCP</li>
+            <li>DNS</li>
+          </ul>
+          <p class="topics-label" style="margin-top:16px;">My Notes — Day 05</p>
+          <div class="code-label">HTTP Methods</div>
+          <div class="code-block">GET     -> retrieve data from the server
+POST    -> send new data to the server
+PUT     -> update/replace existing data on the server
+DELETE  -> remove data from the server</div>
+          <div class="code-label">IPv4 vs IPv6</div>
+          <div class="code-block">IPv4 -> 32-bit,  e.g. 192.168.1.1        -> ~4.3 billion addresses
+IPv6 -> 128-bit, e.g. 2001:0db8::ff00:42 -> practically unlimited addresses</div>
+          <p style="font-size:.84rem;line-height:1.65;opacity:.65;margin-bottom:12px;">
+            <strong>DHCP</strong> (Dynamic Host Configuration Protocol) automatically assigns an IP address to a
+            device when it joins the network, instead of it being configured manually.<br>
+            <strong>DNS</strong> (Domain Name System) translates human-readable domain names like
+            <em>google.com</em> into the numeric IP address that computers actually use to connect.</p>
+        </div>
+
+        <!-- DAY 6 -->
+        <div class="day-content" id="nw-d6">
+          <div class="day-thumb" style="font-size:1rem;justify-content:flex-start;padding:0 20px;gap:10px;">
+            <span>🛰️</span><span>Day 06 — ARP, ICMP &amp; Revision</span></div>
+          <h3 class="day-h">Day 06 — ARP, ICMP &amp; Revision</h3>
+          <p class="day-p">Learned two supporting protocols that work quietly behind the scenes — ARP for address
+            resolution and ICMP for diagnostics — then revised everything from Day 1 to Day 5 before moving to the
+            final day.</p>
+          <p class="topics-label">Topics Covered</p>
+          <ul class="topics-list">
+            <li>What is ARP</li>
+            <li>What is ICMP</li>
+            <li>Revision of previous topics</li>
+          </ul>
+          <p class="topics-label" style="margin-top:16px;">My Notes — Day 06</p>
+          <p style="font-size:.84rem;line-height:1.65;opacity:.65;margin-bottom:12px;">
+            <strong>ARP</strong> (Address Resolution Protocol) maps a known IP address to its corresponding MAC
+            (physical) address on a local network, so data can actually be delivered at the hardware level.<br>
+            <strong>ICMP</strong> (Internet Control Message Protocol) is used for diagnostics and error reporting —
+            the <code>ping</code> command is built on ICMP.</p>
+          <div class="code-label">ping — a simple ICMP example</div>
+          <div class="code-block">C:\> ping google.com
+
+Pinging google.com [142.250.194.14] with 32 bytes of data:
+Reply from 142.250.194.14: bytes=32 time=18ms TTL=115
+Reply from 142.250.194.14: bytes=32 time=17ms TTL=115</div>
+          <div class="assign-note">📌 Revision checklist: Data communication components → Network types (PAN/LAN/MAN/WAN)
+            → Topologies & devices → OSI 7 layers → HTTP/IP/DHCP/DNS → ARP & ICMP.</div>
+        </div>
+
+        <!-- DAY 7 -->
+        <div class="day-content" id="nw-d7">
+          <div class="day-thumb" style="font-size:1rem;justify-content:flex-start;padding:0 20px;gap:10px;">
+            <span>🔌</span><span>Day 07 — WebSocket &amp; Project Discussion</span></div>
+          <h3 class="day-h">Day 07 — WebSocket &amp; Project Discussion 🎯</h3>
+          <p class="day-p">Closed the module with modern real-time communication on the web — how WebSocket and
+            WebRTC differ from traditional request/response HTTP — then discussed possible project ideas that could
+            apply the module's networking concepts.</p>
+          <p class="topics-label">Topics Covered</p>
+          <ul class="topics-list">
+            <li>What is WebSocket</li>
+            <li>What is Web Real-Time Communication (WebRTC)</li>
+            <li>Project ideas and discussion</li>
+          </ul>
+          <p class="topics-label" style="margin-top:16px;">My Notes — Day 07</p>
+          <p style="font-size:.84rem;line-height:1.65;opacity:.65;margin-bottom:12px;">
+            <strong>WebSocket</strong> is a protocol that opens a single, persistent, full-duplex connection between
+            client and server — unlike HTTP, both sides can send data at any time without repeated
+            requests. Used for live chat, notifications, and live dashboards.<br>
+            <strong>WebRTC</strong> (Web Real-Time Communication) enables direct peer-to-peer audio, video, and data
+            transfer between browsers with minimal latency — the technology behind in-browser video calling.</p>
+          <p class="topics-label" style="margin-top:16px;">Project Ideas Discussed</p>
+          <ul class="topics-list">
+            <li>Real-time chat application using WebSocket</li>
+            <li>Simple network scanner / ping-sweep utility</li>
+            <li>DNS lookup tool showing domain → IP resolution</li>
+            <li>LAN-based file sharing tool</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <!-- ============================================================= -->
 
 
