@@ -694,6 +694,14 @@ section {
     opacity: .7;
 }
 
+.ach-link {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: .8rem;
+    font-weight: 800;
+    color: var(--o);
+}
+
 #student-agreement {
     background: var(--y);
 }
